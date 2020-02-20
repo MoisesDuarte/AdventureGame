@@ -9,9 +9,7 @@ function mostrarItem(newClass) {
     newEl.style.display = "block";
 }
 
-function mostrarTexto() {
-    txt = 'A noite é escura e fria e impessoal. As vielas recendem o odor acre de morte.'
-
+function mostrarTexto(txt) {
     var el = document.querySelector(".text-content");
     el.innerHTML = "";
     el.innerHTML = txt;
