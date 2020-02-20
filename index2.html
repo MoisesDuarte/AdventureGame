@@ -11,13 +11,17 @@
     
     <script>
         function montarCena() {
-            var locais = ["Sala de Estar", "Quarto", "Cozinha"];
-            var container = document.querySelector(".movement-itens");
+            var background = "url('img/Background2.jpg')";
+            var locais = ["Laboratório 1", "Laboratório 2", "Laboratório 3", 'Pátio'];
+            var screenContainer = document.querySelector(".screen-container");
+            var movementContainer = document.querySelector(".movement-itens");
+
+            screenContainer.style.backgroundImage = background;
 
             for (var local of locais) {
                 var li = document.createElement("LI");
                 li.innerHTML = local;
-                container.appendChild(li);
+                movementContainer.appendChild(li);
             };
         }
     </script>
