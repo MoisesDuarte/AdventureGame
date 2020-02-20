@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AdventureGame</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ui_functions.js"></script>
+    
+    <script>
+        function montarCena() {
+            var locais = ["Sala de Estar", "Quarto", "Cozinha"];
+            var container = document.querySelector(".movement-itens");
+
+            for (var local of locais) {
+                var li = document.createElement("LI");
+                li.innerHTML = local;
+                container.appendChild(li);
+            };
+        }
+    </script>
+</head>
+<body>
+    <button onclick="montarCena()">Montar Cena</button>
+
+    <div class="grid-container">
+        <div class="menu-container">
+            <ul class="menu-itens">
+                <li onclick="mostrarItem('.movement-itens')">Mover</li>
+                <li onclick="mostrarItem('.examine-itens')">Examinar</li>
+                <li onclick="mostrarItem('.inventory-itens')">Inventário</li>
+            </ul>
+            
+            <ul style="display: none" class="movement-itens">
+                <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <hr>
+            </ul>
+
+            <ul style="display: none" class="examine-itens">
+                <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <hr>
+            </ul>
+
+            <ul style="display: none" class="inventory-itens">
+                <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <hr>
+            </ul>
+        </div>
+
+        <div class="screen-container">
+           
+        </div>
+        
+        <div class="text-container">
+            <p class="text-content"></p>
+        </div>
+
+    </div>
+</body>
+</html>
