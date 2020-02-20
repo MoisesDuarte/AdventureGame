@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+/* Fonte Global */
+* {
+    font-family: 'Roboto Slab', serif;
+    background-color: black;
+}
+
+/* Definições do grid */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'menu main'
+        'footer footer';
+    grid-template-columns: 160px 640px;
+    grid-template-rows: 480px 200px;
+    grid-gap: 2px;
+}
+
+.grid-container > div {
+    border: 1px solid white;
+    color: white;
+    border-radius: 2px;
+}
+
+/* Items do Grid */
+.menu-container { grid-area: menu}
+.screen-container {background-image: url("../img/ScreenPlaceholder.jpg"); grid-area: main}
+.text-container {grid-area: footer}
+
+/* Elementos da tela */
+.menu-itens {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 16px;
+}
+
+.movement-itens, .examine-itens, .inventory-itens {
+    list-style: none;
+    text-transform: capitalize;
+    padding: 0px;
+    margin: 16px;
+}
+
+.menu-itens > li:hover, .movement-itens > li:hover, .examine-itens > li:hover, .inventory-itens > li:hover {
+    font-weight: bold;
+}
+
+.text-content {
+    font-size: 12pt;
+    margin: 16px;
+    text-align: justify;
+}

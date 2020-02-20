@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AdventureGame</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript">       
+        function mostrarItem(newClass) {
+            var el = document.body.querySelectorAll("ul");
+            var newEl = document.body.querySelector(newClass);
+
+            el.forEach(element => {
+                element.style.display = "none";
+            });
+
+            newEl.style.display = "block";
+        }
+    </script>
+
+</head>
+<body>
+    <div class="grid-container">
+
+        <div class="menu-container">
+            <ul class="menu-itens">
+                <li onclick="mostrarItem('.movement-itens')">Mover</li>
+                <li onclick="mostrarItem('.examine-itens')">Examinar</li>
+                <li onclick="mostrarItem('.inventory-itens')">Inventário</li>
+            </ul>
+            
+            <ul style="display: none" class="movement-itens">
+                <li>Avenida</li>
+                <li>Beco</li>
+                <li onclick="mostrarItem('.menu-itens')">Voltar</li>
+            </ul>
+
+            <ul style="display: none" class="examine-itens">
+                <li>Bueiro</li>
+                <li>Janela Acesa</li>
+                <li onclick="mostrarItem('.menu-itens')">Voltar</li>
+            </ul>
+
+            <ul style="display: none" class="inventory-itens">
+                <li>Revólver .38</li>
+                <li>Distintivo</li>
+                <li onclick="mostrarItem('.menu-itens')">Voltar</li>
+            </ul>
+        </div>
+
+        <div class="screen-container">
+           
+        </div>
+        
+        <div class="text-container">
+            <p class="text-content"><b>Bellacroix:</b><br>Há apenas o silêncio. Do tipo que antecede a morte, frio e impessoal.</p>
+        </div>
+
+    </div>
+</body>
+</html>
