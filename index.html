@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript">       
+    <script type="text/javascript">   
         function mostrarItem(newClass) {
             var el = document.body.querySelectorAll("ul");
             var newEl = document.body.querySelector(newClass);
@@ -18,6 +18,14 @@
             });
 
             newEl.style.display = "block";
+        }
+
+        function mostrarTexto() {
+            txt = 'A noite é escura e fria e impessoal. As vielas recendem o odor acre de morte.'
+
+            var el = document.querySelector(".text-content");
+            el.innerHTML = "";
+            el.innerHTML = txt;
         }
     </script>
 
@@ -55,8 +63,8 @@
            
         </div>
         
-        <div class="text-container">
-            <p class="text-content"><b>Bellacroix:</b><br>Há apenas o silêncio. Do tipo que antecede a morte, frio e impessoal.</p>
+        <div class="text-container" onclick="mostrarTexto()">
+            <p class="text-content"></p>
         </div>
 
     </div>
