@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+/* Variaveis */
+:root {
+    --main-bg-color: black;
+    --main-primary-color: white;
+}
+
 /* Fonte Global */
 * {
     font-family: 'Roboto Slab', serif;
-    background-color: black;
+    background-color: var(--main-bg-color);
 }
 
 /* Definições do grid */
@@ -18,8 +24,8 @@
 }
 
 .grid-container > div {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--main-primary-color);
+    color: var(--main-primary-color);
     border-radius: 2px;
 }
 
@@ -44,13 +50,13 @@
 
 .menu-itens > li:hover, .movement-itens > li:hover, .examine-itens > li:hover, .inventory-itens > li:hover {
     font-weight: bold;
-    border-left: 1px solid white;
+    border-left: 1px solid var(--main-primary-color);
     padding-left: 4px;
 }
 
 .menu-itens > li:active, .movement-itens > li:active, .examine-itens > li:active, .inventory-itens > li:active {
-    background-color: white;
-    color: black;
+    background-color: var(--main-primary-color);
+    color: var(--main-bg-color);
     font-weight: bold;
 }
 
