@@ -11,15 +11,15 @@
     
     <script>
         function montarCena() {
-            var background = "url('img/Background2.jpg')";
-            var locais = ["Laboratório 1", "Laboratório 2", "Laboratório 3", 'Pátio'];
-            var screenContainer = document.querySelector(".screen-container");
-            var movementContainer = document.querySelector(".movement-itens");
+            let background = "url('img/Background2.jpg')";
+            let locais = ["Laboratório 1", "Laboratório 2", "Laboratório 3", 'Pátio'];
+            let screenContainer = document.querySelector(".screen-container");
+            let movementContainer = document.querySelector(".movement-itens");
 
             screenContainer.style.backgroundImage = background;
 
-            for (var local of locais) {
-                var li = document.createElement("LI");
+            for (let local of locais) {
+                let li = document.createElement("LI");
                 li.innerHTML = local;
                 movementContainer.appendChild(li);
             };

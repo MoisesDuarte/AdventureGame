@@ -1,6 +1,6 @@
 function mostrarItem(newClass) {
-    var el = document.body.querySelectorAll("ul");
-    var newEl = document.body.querySelector(newClass);
+    let el = document.body.querySelectorAll("ul");
+    let newEl = document.body.querySelector(newClass);
 
     el.forEach(element => {
         element.style.display = "none";
@@ -10,7 +10,7 @@ function mostrarItem(newClass) {
 }
 
 function mostrarTexto(txt) {
-    var el = document.querySelector(".text-content");
+    let el = document.querySelector(".text-content");
     el.innerHTML = "";
     el.innerHTML = txt;
 }
