@@ -38,7 +38,6 @@
 
 .movement-itens, .examine-itens, .inventory-itens {
     list-style: none;
-    text-transform: capitalize;
     padding: 0px;
     margin: 16px;
 }
