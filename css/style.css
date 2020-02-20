@@ -45,10 +45,19 @@
 
 .menu-itens > li:hover, .movement-itens > li:hover, .examine-itens > li:hover, .inventory-itens > li:hover {
     font-weight: bold;
+    border-left: 1px solid white;
+    padding-left: 4px;
+}
+
+.menu-itens > li:active, .movement-itens > li:active, .examine-itens > li:active, .inventory-itens > li:active {
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }
 
 .text-content {
     font-size: 14pt;
-    margin: 16px;
     text-align: justify;
+    margin: 16px;
 }
+  
