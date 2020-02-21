@@ -10,7 +10,7 @@ function mostrarItem(newClass) {
 }
 
 function mostrarTexto(txt) {
-    let el = document.querySelector(".text-content");
+    let el = document.querySelector(".text-conteudo");
     el.innerHTML = "";
     el.innerHTML = txt;
 }

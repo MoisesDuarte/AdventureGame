@@ -9,19 +9,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/ui_functions.js"></script>
     
-    <script>
+    <script type="text/javascript">
         function montarCena() {
-            // Itens de Cena
             let i = 0;
+
+            // Itens de Cena
             let background = "url('img/Background2.jpg')";
             let locais = ["Laboratório 1", "Laboratório 2", "Laboratório 3", 'Pátio'];
             let pontosInteresse = ["Coord. Luiz", "Lâmp. de Chão"];
 
             // Elementos da cena
-            let screenContainer = document.querySelector(".screen-container");
-            let movementContainer = document.querySelector(".movement-itens");
-            let examineContainer = document.querySelector(".examine-itens");
-            let itemContainer = document.querySelector(".inventory-itens");
+            let screenContainer = document.querySelector(".tela-container");
+            let movementContainer = document.querySelector(".movimento-items");
+            let examineContainer = document.querySelector(".examinar-items");
+            let itemContainer = document.querySelector(".inventario-items");
 
             screenContainer.style.backgroundImage = background;
 
@@ -54,34 +55,34 @@
     <div class="site-container">
         <div class="grid-container">
             <div class="menu-container">
-                <ul class="menu-itens">
-                    <li onclick="mostrarItem('.movement-itens')">Mover</li>
-                    <li onclick="mostrarItem('.examine-itens')">Examinar</li>
-                    <li onclick="mostrarItem('.inventory-itens')">Inventário</li>
+                <ul class="menu-items">
+                    <li onclick="mostrarItem('.movimento-items')">Mover</li>
+                    <li onclick="mostrarItem('.examinar-items')">Examinar</li>
+                    <li onclick="mostrarItem('.inventario-items')">Inventário</li>
                 </ul>
                 
-                <ul style="display: none" class="movement-itens">
-                    <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <ul style="display: none" class="movimento-items">
+                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
                     <hr>
                 </ul>
     
-                <ul style="display: none" class="examine-itens">
-                    <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <ul style="display: none" class="examinar-items">
+                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
                     <hr>
                 </ul>
     
-                <ul style="display: none" class="inventory-itens">
-                    <li onclick="mostrarItem('.menu-itens')">VOLTAR</li>
+                <ul style="display: none" class="inventario-items">
+                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
                     <hr>
                 </ul>
             </div>
     
-            <div class="screen-container">
+            <div class="tela-container">
                
             </div>
             
             <div class="text-container">
-                <div class="text-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum id erat eu luctus. Cras tempus dui in tortor lacinia porta et sit amet enim. Duis aliquam ligula ut sapien porta cursus. Nulla ut viverra libero, vitae rhoncus augue. Donec eu elementum augue. Morbi tempor interdum urna eget consectetur. Nullam sed mauris vel ligula accumsan semper.</div>
+                <div class="text-conteudo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum id erat eu luctus. Cras tempus dui in tortor lacinia porta et sit amet enim. Duis aliquam ligula ut sapien porta cursus. Nulla ut viverra libero, vitae rhoncus augue. Donec eu elementum augue. Morbi tempor interdum urna eget consectetur. Nullam sed mauris vel ligula accumsan semper.</div>
             </div>
     
             <button onclick="montarCena()">Montar Cena</button>
