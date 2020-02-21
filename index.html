@@ -33,7 +33,6 @@
                 li.innerHTML = local;
                 li.addEventListener("click", function() {console.log("Mover para " + local)});
                 movimentoContainer.appendChild(li);
-                // console.log(li);
                 i++;
             };
 
@@ -45,6 +44,7 @@
                 li.innerHTML = ponto.nome;
                 li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
                 examinarContainer.appendChild(li);
+                i++;
             }
         }
     </script>
