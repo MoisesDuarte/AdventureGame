@@ -43,12 +43,12 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 ```json
 [
     {
-        ...
         "locais": [
-            "nome": "Cena1",
-            "destino": "cena1.json"
+            {
+                "nome": "Cena1",
+                "destino": "cena1.json"
+            }
         ]   
-        ...
     }
 ] 
 ```
