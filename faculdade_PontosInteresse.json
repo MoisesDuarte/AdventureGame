@@ -1,10 +1,23 @@
 [
     {
-        "nome" : "Coord. Luiz",
-        "descricao" : "Parece irritado com algo. Anda de um lado para o outro, inquieto, resmungando obscenidades."
-    },
-    {
-        "nome" : "Lamp. de Chão",
-        "descricao" : "Está ligado, por algum motivo. A luz esbranquiçada sequer desponta sobre a manhã ensolarada."
-    }
+        "nome": "Bloco 2",
+        "descricao": "",
+        "fundo": "Background2.jpg",
+        "locais": [
+            "Laboratório 1", 
+            "Laboratório 2", 
+            "Laboratório 3", 
+            "Pátio"
+        ],
+        "pontosInteresse": [
+            {
+                "nome" : "Coord. Luiz", 
+                "descricao" : "Parece irritado com algo. Anda de um lado para o outro, inquieto, resmungando obscenidades."
+            },
+            {
+                "nome" : "Lamp. de Chão",
+                "descricao" : "Está ligado, por algum motivo. A luz esbranquiçada sequer desponta sobre a manhã ensolarada."
+            }
+        ]
+    }   
 ]
