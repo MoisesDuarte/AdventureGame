@@ -19,12 +19,12 @@
             let pontosInteresse = JSON.parse('[{"nome" : "Coord. Luiz", "descricao" : "Parece irritado com algo. Anda de um lado para o outro, inquieto, resmungando obscenidades."},{"nome" : "Lamp. de Chão","descricao" : "Está ligado, por algum motivo. A luz esbranquiçada sequer desponta sobre a manhã ensolarada."}]');
 
             // Elementos da cena
-            let screenContainer = document.querySelector(".tela-container");
-            let movementContainer = document.querySelector(".movimento-items");
-            let examineContainer = document.querySelector(".examinar-items");
-            let itemContainer = document.querySelector(".inventario-items");
+            let telaContainer = document.querySelector(".tela-container");
+            let movimentoContainer = document.querySelector(".movimento-items");
+            let examinarContainer = document.querySelector(".examinar-items");
+            let inventarioContainer = document.querySelector(".inventario-items");
 
-            screenContainer.style.backgroundImage = background;
+            telaContainer.style.backgroundImage = background;
 
             // Criando e concatenando elementos li a lista
             for (let local of locais) {
@@ -32,7 +32,7 @@
                 li.id = "local" + i;
                 li.innerHTML = local;
                 li.addEventListener("click", function() {console.log("Mover para " + local)});
-                movementContainer.appendChild(li);
+                movimentoContainer.appendChild(li);
                 // console.log(li);
                 i++;
             };
@@ -44,7 +44,7 @@
                 li.id = "ponto" + i;
                 li.innerHTML = ponto.nome;
                 li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
-                examineContainer.appendChild(li);
+                examinarContainer.appendChild(li);
             }
         }
     </script>
