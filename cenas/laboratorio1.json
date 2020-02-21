@@ -2,7 +2,7 @@
     {
        "nome":"Laborat\u00f3rio 1",
        "descricao":"",
-       "fundo":"ScreenPlaceholder.jpg",
+       "fundo":"BackgroundLaboratorio1.jpg",
        "locais": [
           {
              "nome": "Bloco A",
@@ -12,7 +12,7 @@
        "pontosInteresse":[
           {
              "nome":"Computador",
-             "descricao":"Inserir descrição aqui."  
+             "descricao":"Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo."  
           }
        ]
     }
