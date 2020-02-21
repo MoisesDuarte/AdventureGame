@@ -2,14 +2,20 @@
 
 /* Variaveis */
 :root {
-    --main-bg-color: white;
-    --main-primary-color: black;
+    --main-bg-color: #000000;
+    --main-primary-color: #ffffff;
 }
 
 /* Fonte Global */
 * {
     font-family: 'Roboto Slab', serif;
     background-color: var(--main-bg-color);
+}
+
+/* Container do site */
+.site-container {
+    margin: auto;
+    width: 800px;
 }
 
 /* Definições do grid */
@@ -19,7 +25,7 @@
         'menu main'
         'footer footer';
     grid-template-columns: 160px 640px;
-    grid-template-rows: 480px 200px;
+    grid-template-rows: 480px 120px;
     grid-gap: 2px;
 }
 
@@ -30,8 +36,8 @@
 }
 
 /* Items do Grid */
-.menu-container { grid-area: menu}
-.screen-container {background-image: url("../img/ScreenPlaceholder.jpg"); grid-area: main}
+.menu-container {grid-area: menu}
+.screen-container {grid-area: main}
 .text-container {grid-area: footer}
 
 /* Elementos da tela */
@@ -61,8 +67,12 @@
 }
 
 .text-content {
-    font-size: 14pt;
-    text-align: justify;
-    margin: 16px;
+    padding: 16px;
+    transform: color 1.5s;
 }
   
+button {
+    color: white;
+    margin: 8px;
+    padding: 8px;
+}
