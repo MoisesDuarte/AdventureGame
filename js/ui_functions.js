@@ -24,12 +24,17 @@ function montarCena(nomeCena) {
 
             telaContainer.style.backgroundImage = background;
 
+            // Colocando botão de retorno no topo de cada lista
+            let voltar = document.createElement("LI");
+            voltar.innerHTML = "VOLTAR";
+            voltar.addEventListener("click", function() {mostrarItem(".menu-items")});
+
             // Criando e concatenando elementos li a lista
             for (let local of locais) {
                 let li = document.createElement("LI");
                 li.id = "local" + i;
-                li.innerHTML = local;
-                li.addEventListener("click", function() {console.log("Mover para " + local)});
+                li.innerHTML = local.nome;
+                li.addEventListener("click", function() {montarCena(local.destino)});
                 movimentoContainer.appendChild(li);
                 i++;
             };

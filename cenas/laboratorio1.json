@@ -1,0 +1,19 @@
+[
+    {
+       "nome":"Laborat\u00f3rio 1",
+       "descricao":"",
+       "fundo":"ScreenPlaceholder.jpg",
+       "locais": [
+          {
+             "nome": "Bloco A",
+             "destino": "blocoA"
+          }
+       ],
+       "pontosInteresse":[
+          {
+             "nome":"Computador",
+             "descricao":"Inserir descrição aqui."  
+          }
+       ]
+    }
+ ]
