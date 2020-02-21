@@ -16,7 +16,7 @@
             // Itens de Cena
             let background = "url('img/Background2.jpg')";
             let locais = ["Laboratório 1", "Laboratório 2", "Laboratório 3", 'Pátio'];
-            let pontosInteresse = ["Coord. Luiz", "Lâmp. de Chão"];
+            let pontosInteresse = JSON.parse('[{"nome" : "Coord. Luiz", "descricao" : "Parece irritado com algo. Anda de um lado para o outro, inquieto, resmungando obscenidades."},{"nome" : "Lamp. de Chão","descricao" : "Está ligado, por algum motivo. A luz esbranquiçada sequer desponta sobre a manhã ensolarada."}]');
 
             // Elementos da cena
             let screenContainer = document.querySelector(".tela-container");
@@ -31,9 +31,9 @@
                 let li = document.createElement("LI");
                 li.id = "local" + i;
                 li.innerHTML = local;
-                li.addEventListener("click", function() {mostrarTexto(local)});
+                li.addEventListener("click", function() {console.log("Mover para " + local)});
                 movementContainer.appendChild(li);
-                console.log(li);
+                // console.log(li);
                 i++;
             };
 
@@ -42,11 +42,9 @@
             for (let ponto of pontosInteresse) {
                 let li = document.createElement("LI");
                 li.id = "ponto" + i;
-                li.innerHTML = ponto;
-                li.addEventListener("click", function() {mostrarTexto(ponto)});
-                console.log(li);
+                li.innerHTML = ponto.nome;
+                li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
                 examineContainer.appendChild(li);
-                i++;
             }
         }
     </script>
@@ -82,7 +80,7 @@
             </div>
             
             <div class="text-container">
-                <div class="text-conteudo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum id erat eu luctus. Cras tempus dui in tortor lacinia porta et sit amet enim. Duis aliquam ligula ut sapien porta cursus. Nulla ut viverra libero, vitae rhoncus augue. Donec eu elementum augue. Morbi tempor interdum urna eget consectetur. Nullam sed mauris vel ligula accumsan semper.</div>
+                <div class="text-conteudo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum id erat eu luctus. Cras tempus dui in tortor lacinia porta et sit amet enim. Duis aliquam ligula ut sapien porta cursus. Nulla ut viverra libero, vitae rhoncus augue. Donec eu elementum augue. Morbi tempor interdum urna eget consectetur.</div>
             </div>
     
             <button onclick="montarCena()">Montar Cena</button>
