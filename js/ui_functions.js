@@ -25,6 +25,9 @@ function montarCena(nomeCena) {
 
             telaContainer.style.backgroundImage = background;
 
+            // let teste = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
+            // console.log(teste);
+
             // Colocando botão de retorno no topo de cada lista
             let voltar1 = document.createElement("LI");
             let hr1 = document.createElement("HR");
@@ -72,13 +75,10 @@ function montarCena(nomeCena) {
 }
 
 function limparCena() {
-    // TODO: muita repetição aqui. procurar unificar seletores e acesso a innerhtml
-    let movimentoAntigo = document.querySelector(".movimento-items");
-    let examinarAntigo = document.querySelector(".examinar-items");
-    let textAntigo = document.querySelector(".text-conteudo");
-    movimentoAntigo.innerHTML = "";
-    examinarAntigo.innerHTML = "";
-    textAntigo.innerHTML = "";
+    let cenaAntiga = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
+    for(cena of cenaAntiga) {
+        cena.innerHTML = "";
+    }
 }
 
 // FUNÇÕES PARA CONTROLE DA INTERFACE
