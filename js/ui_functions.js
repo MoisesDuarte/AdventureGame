@@ -49,7 +49,6 @@ function montarCena(nomeCena) {
             };
 
             i = 0;
-
             for (let ponto of pontosInteresse) {
                 let li = document.createElement("LI");
                 li.id = "ponto" + i;
@@ -57,8 +56,7 @@ function montarCena(nomeCena) {
                 li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
                 examinarContainer.appendChild(li);
                 i++;
-            }
-            
+            }    
         })
         .catch(err => {
             console.log("Request Inválido. Checar url do arquivo.")
