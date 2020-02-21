@@ -25,26 +25,17 @@ function montarCena(nomeCena) {
 
             telaContainer.style.backgroundImage = background;
 
-            // let teste = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
-            // console.log(teste);
-
             // Colocando botão de retorno no topo de cada lista
-            let voltar1 = document.createElement("LI");
-            let hr1 = document.createElement("HR");
-            voltar1.innerHTML = "VOLTAR";
-            voltar1.addEventListener("click", () => {mostrarItem(".menu-items")});
-
-            // TODO: Código redundante. Procurar uma maneira de 'replicar' click listener dinamicamente para varios elementos (um for deve bastar)
-            let voltar2 = document.createElement("LI");
-            let hr2 = document.createElement("HR");
-            voltar2.innerHTML = "VOLTAR";
-            voltar2.addEventListener("click", () => {mostrarItem(".menu-items")});
-
-            movimentoContainer.appendChild(voltar1);
-            movimentoContainer.appendChild(hr1);
-
-            examinarContainer.appendChild(voltar2);
-            examinarContainer.appendChild(hr2);
+            let elementosLimpos = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");        
+            
+            for (let elemento of elementosLimpos) {
+                let voltar = document.createElement("LI");
+                let hr = document.createElement("HR");
+                voltar.innerHTML = "VOLTAR";
+                voltar.addEventListener("click", () => {mostrarItem(".menu-items")});
+                elemento.appendChild(voltar);
+                elemento.appendChild(hr);
+            }; 
 
             // Criando e concatenando elementos li a lista
             let i = 0;
@@ -75,9 +66,9 @@ function montarCena(nomeCena) {
 }
 
 function limparCena() {
-    let cenaAntiga = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
-    for(cena of cenaAntiga) {
-        cena.innerHTML = "";
+    let elementosAntigos = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
+    for (let elemento of elementosAntigos) {
+        elemento.innerHTML = "";
     }
 }
 
