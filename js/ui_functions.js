@@ -78,9 +78,12 @@ function montarCena(nomeCena) {
 
 function limparCena() {
     let elementosAntigos = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");
+    let textoAntigo = document.querySelector(".text-conteudo");
     for (let elemento of elementosAntigos) {
         elemento.innerHTML = "";
     }
+
+    textoAntigo.innerHTML = "";
 }
 
 // FUNÇÕES PARA CONTROLE DA INTERFACE
