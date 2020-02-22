@@ -7,7 +7,7 @@
 }
 
 /* Fonte Global */
-* {
+body {
     font-family: 'Roboto Slab', serif;
     background-color: var(--main-bg-color);
 }
@@ -18,7 +18,7 @@
     width: 800px;
 }
 
-/* Definições do grid */
+/* DEFINIÇÕES DO GRID */
 .grid-container {
     display: grid;
     grid-template-areas: 
@@ -35,20 +35,20 @@
     border-radius: 2px;
 }
 
-/* Items do Grid */
 .menu-container {grid-area: menu}
 .tela-container {grid-area: main}
 .text-container {grid-area: footer}
 
-/* Elementos da tela */
-.menu-container > ul{
+/* ELEMENTOS DA TELA */
+/* Menus */
+ul {
     list-style: none;
     text-transform: uppercase;
     padding: 0px;
     margin: 16px;
 }
 
-.menu-container > ul:not(.menu-items) {
+ul:not(.menu-items) {
     text-transform: capitalize;
 }
 
@@ -65,13 +65,13 @@ li:active {
     font-weight: bold;
 }
 
+/* Texto */
 .text-conteudo {
     padding: 16px;
     transform: color 1.5s;
 }
   
 button {
+    background-color: black;
     color: white;
-    margin: 8px;
-    padding: 8px;
 }
