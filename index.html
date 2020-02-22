@@ -40,6 +40,7 @@
                 <ul class="menu-items">
                     <li onclick="mostrarItem('.movimento-items')">Mover</li>
                     <li onclick="mostrarItem('.examinar-items')">Examinar</li>
+                    <li onclick="mostrarItem('.falar-items')">Falar</li>
                     <li onclick="mostrarItem('.inventario-items')">Inventário</li>
                 </ul>
                 
@@ -52,6 +53,11 @@
                     <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
                     <hr>
                 </ul>
+
+                <ul style="display: none" class="falar-items">
+                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
+                    <hr>
+                </ul>                
     
                 <ul style="display: none" class="inventario-items">
                     <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
@@ -69,7 +75,7 @@
             
             <div class="debug">
                 <button onclick="carregarCena()">Montar Cena</button>
-                <button onclick="mostrarFala()">Mostrar Fala</button>
+                <button onclick="mostrarFala()">Montar Cena com Fala</button>
             </div>
             
         </div>
