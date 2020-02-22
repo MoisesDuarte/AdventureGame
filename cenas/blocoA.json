@@ -1,23 +1,28 @@
-[
-   {
-      "nome":"Bloco 2",
-      "descricao":"",
-      "fundo":"BackgroundBlocoA.jpg",
-      "locais": [
-         {
-            "nome": "Laborat\u00f3rio 1",
-            "destino": "laboratorio1"
-         }
-      ],
-      "pontosInteresse":[
-         {
-            "nome":"Coord. Luiz",
-            "descricao":"Parece irritado com algo. Anda de um lado para o outro, inquieto, resmungando obscenidades."  
-         },
-         {
-            "nome":"Lamp. de Ch\u00e3o",
-            "descricao":"Est\u00e1 ligado, por algum motivo. A luz esbranqui\u00e7ada sequer desponta sobre a manh\u00e3 ensolarada."
-         }
-      ]
-   }
-]
+[{
+	"nome": "Bloco A",
+	"descricao": "",
+	"fundo": "BackgroundBlocoA.jpg",
+	"locais": [{
+			"nome": "Laboratório 1",
+			"destino": "laboratorio1"
+
+		}
+	],
+	"pontosInteresse": [{
+			"nome": "Lâmp. de Chão",
+			"descricao": "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã."
+
+		}
+	],
+	"atores": [{
+         "estado" : "luizNeutro",
+			"nome": "Coord. Luiz",
+			"falas": {
+				"neutro": [
+                  "Luiz: Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
+                  "Luiz: Espero que esse lugar não acabe uma várzea enquanto eu estiver fora."
+				]
+			}
+		}
+	]
+}]

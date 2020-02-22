@@ -16,11 +16,13 @@ function montarCena(nomeCena) {
             let background = "url('img/" + cenaJson[0].fundo + "')";
             let locais = cenaJson[0].locais;
             let pontosInteresse = cenaJson[0].pontosInteresse;
-            
+            let atores = cenaJson[0].atores;
+
             // Elementos da cena
             let telaContainer = document.querySelector(".tela-container");
             let movimentoContainer = document.querySelector(".movimento-items");
             let examinarContainer = document.querySelector(".examinar-items");
+            let falarContainer = document.querySelector(".falar-items");
             let inventarioContainer = document.querySelector(".inventario-items");
 
             telaContainer.style.backgroundImage = background;
@@ -49,11 +51,22 @@ function montarCena(nomeCena) {
             };
 
             i = 0;
+            for (let ator of atores) {
+                let li = document.createElement("LI");
+                li.id = 'ator' + i;
+                li.innerHTML = ator.nome;
+                console.log(ator.falas["neutro"]);
+                li.addEventListener("click", function() {mostrarFala(ator.falas["neutro"])});
+                falarContainer.appendChild(li);
+                i++;
+            }
+
+            i = 0;
             for (let ponto of pontosInteresse) {
                 let li = document.createElement("LI");
                 li.id = "ponto" + i;
                 li.innerHTML = ponto.nome;
-                li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
+                li.addEventListener("click", function() {mostrarDescricao(ponto.descricao)});
                 examinarContainer.appendChild(li);
                 i++;
             }    
@@ -82,8 +95,23 @@ function mostrarItem(newClass) {
     newEl.style.display = "block";
 }
 
-function mostrarTexto(txt) {
+function mostrarDescricao(txt) {
     let el = document.querySelector(".text-conteudo");
     el.innerHTML = "";
     el.innerHTML = txt;
+}
+
+function mostrarFala(arrayFalas) {
+    let i = 0;
+    let el = document.querySelector(".text-conteudo");
+    let falas = arrayFalas;
+
+    for (let fala of falas) {
+        ((i) => {
+            setTimeout(() => {
+                el.innerHTML = fala;
+            }, 4000*i); // delay para aparição de fala
+        })(i);
+        i++;
+    }
 }
