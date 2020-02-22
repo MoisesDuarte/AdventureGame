@@ -73,8 +73,8 @@ li:active {
 
 .text-next {
     position: absolute;
-    border: 1px solid white;
     font-size: 10pt;
+    text-transform: uppercase;
     padding: 6px;
     right: 0;
     bottom: 0;
