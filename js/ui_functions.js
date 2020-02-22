@@ -55,7 +55,6 @@ function montarCena(nomeCena) {
                 let li = document.createElement("LI");
                 li.id = 'ator' + i;
                 li.innerHTML = ator.nome;
-                console.log(ator.falas["neutro"]);
                 li.addEventListener("click", function() {mostrarFala(ator.falas["neutro"])});
                 falarContainer.appendChild(li);
                 i++;
@@ -107,15 +106,22 @@ function mostrarDescricao(txt) {
 function mostrarFala(arrayFalas) {
     // TODO: 'Pausar' enquanto a fala estiver correndo pela tela
     let i = 0;
-    let el = document.querySelector(".text-conteudo");
+    let textContainer = document.querySelector(".text-container");
+    let textConteudo = document.querySelector(".text-conteudo");
     let falas = arrayFalas;
 
-    for (let fala of falas) {
-        ((i) => {
-            setTimeout(() => {
-                el.innerHTML = fala;
-            }, 4000*i); // delay para aparição de fala
-        })(i);
-        i++;
-    }
+    // Mostrando Texto Inicial
+    textConteudo.innerHTML = falas[0];
+    i++;
+    
+    // Mostrando texto posterior apos click em div do container
+    textContainer.addEventListener("click", function() {
+        if (i >= falas.length) {
+            textConteudo.innerHTML = "";
+            textContainer.removeEventListener("click", function(){}); // Removendo função do listener após termino da fala
+        } else {
+            textConteudo.innerHTML = falas[i];
+            i++;
+        }        
+    });
 }
