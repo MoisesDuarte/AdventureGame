@@ -108,20 +108,26 @@ function mostrarFala(arrayFalas) {
     let i = 0;
     let textContainer = document.querySelector(".text-container");
     let textConteudo = document.querySelector(".text-conteudo");
+    let textNext = document.querySelector(".text-next");
     let falas = arrayFalas;
 
-    // Mostrando Texto Inicial
+    // Mostrando Texto Inicial, junto de aviso para clicar
     textConteudo.innerHTML = falas[0];
+    textNext.style.display = "block";
     i++;
-    
-    // Mostrando texto posterior apos click em div do container
-    textContainer.addEventListener("click", function() {
-        if (i >= falas.length) {
+
+    textContainer.addEventListener("click", function avancarTexto(){
+        if (i == falas.length) {
             textConteudo.innerHTML = "";
-            textContainer.removeEventListener("click", function(){}); // Removendo função do listener após termino da fala
-        } else {
+            textNext.style.display = "none";
+            textContainer.removeEventListener("click", avancarTexto);
+        }
+
+        while (i < falas.length) {
+            console.log(i + " : " + falas[i]);
             textConteudo.innerHTML = falas[i];
             i++;
-        }        
+            break;
+        }
     });
 }

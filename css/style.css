@@ -37,7 +37,7 @@ body {
 
 .menu-container {grid-area: menu}
 .tela-container {grid-area: main}
-.text-container {grid-area: footer}
+.text-container {grid-area: footer; position: relative}
 
 /* ELEMENTOS DA TELA */
 /* Menus */
@@ -69,6 +69,15 @@ li:active {
 .text-conteudo {
     padding: 16px;
     transform: color 1.5s;
+}
+
+.text-next {
+    position: absolute;
+    border: 1px solid white;
+    font-size: 10pt;
+    padding: 6px;
+    right: 0;
+    bottom: 0;
 }
   
 button {
