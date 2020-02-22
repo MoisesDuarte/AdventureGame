@@ -5,8 +5,8 @@ GUI para jogos de aventura no estilo clássico, utilizando CSS, HTML5, Javascrip
 Uma GUI para jogos de aventura baseada em jogos de aventura clássicos (Uninvited, Famicom Detective Club, etc), para fins educacionais, afim de estudar as tecnologias referentes a construção de aplicações web em código puro. Uso mínimo ou nulo de bibliotecas externas. (Em progresso)
 
 ## Imagens
-![Screenshot 00](img/screenshots/screenshot00.png)
-![Screenshot 01](img/screenshots/screenshot01.png)
+![Screenshot 00](img/screenshots/screen00.png)
+![Screenshot 01](img/screenshots/screen01.png)
 
 ## Utilização 
 Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloco abaixo será sujeito a modificações. 
@@ -58,4 +58,20 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
         ]   
     }
 ] 
+```
+### Exemplo de Ator
+```json
+"atores":[
+      {
+         "estado":"luizNeutro",
+         "nome":"Coord. Luiz",
+         "falas":{
+            "neutro":[
+               "Luiz: Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
+               "Luiz: Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
+               "Luiz: Mas é provável que tudo fique bem, no fim das contas."
+            ]
+         }
+      }
+   ]
 ```
