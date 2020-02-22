@@ -102,6 +102,7 @@ function mostrarDescricao(txt) {
 }
 
 function mostrarFala(arrayFalas) {
+    // TODO: 'Pausar' enquanto a fala estiver correndo pela tela
     let i = 0;
     let el = document.querySelector(".text-conteudo");
     let falas = arrayFalas;

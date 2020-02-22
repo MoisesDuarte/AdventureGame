@@ -1,28 +1,31 @@
-[{
-	"nome": "Laborat\u00f3rio 1",
-	"descricao": "",
-	"fundo": "BackgroundLaboratorio1.jpg",
-	"locais": [{
-			"nome": "Bloco A",
-			"destino": "blocoA"
-
-		}
-	],
-	"pontosInteresse": [{
-			"nome": "Computador",
-			"descricao": "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo."
-
-		}
-	],
-	"atores": [{
-         "estado" : "ramonNeutro",
-			"nome": "Prof. Ramon",
-			"falas": {
-				"neutro": [
-						"Ramon: Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
-						"Ramon: Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"		
-				]
-			}
-		}
-	]
-}]
+[
+   {
+      "nome":"Laborat\u00f3rio 1",
+      "descricao":"",
+      "fundo":"BackgroundLaboratorio1.jpg",
+      "locais":[
+         {
+            "nome":"Bloco A",
+            "destino":"blocoA"
+         }
+      ],
+      "pontosInteresse":[
+         {
+            "nome":"Computador",
+            "descricao":"Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo."
+         }
+      ],
+      "atores":[
+         {
+            "estado":"ramonNeutro",
+            "nome":"Prof. Ramon",
+            "falas":{
+               "neutro":[
+                  "Ramon: Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
+                  "Ramon: Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
+               ]
+            }
+         }
+      ]
+   }
+]
