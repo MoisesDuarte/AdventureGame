@@ -12,26 +12,24 @@ function montarCena(nomeCena) {
             let jsonstring = JSON.stringify(data);
             let cenaJson = JSON.parse(jsonstring);
 
-            // Itens de Cena
+            // Definições de Cena
             let background = "url('img/" + cenaJson[0].fundo + "')";
             let locais = cenaJson[0].locais;
             let pontosInteresse = cenaJson[0].pontosInteresse;
             let atores = cenaJson[0].atores;
 
-            console.log(pontosInteresse[0].descricao);
-            console.log(atores[0].falas["neutro"]);
-
-            // Elementos da cena
+            // Elementos da Interface
             let telaContainer = document.querySelector(".tela-container");
             let movimentoContainer = document.querySelector(".movimento-items");
             let examinarContainer = document.querySelector(".examinar-items");
             let falarContainer = document.querySelector(".falar-items");
             let inventarioContainer = document.querySelector(".inventario-items");
 
+            // Mostrando plano de fundo da cena
             telaContainer.style.backgroundImage = background;
 
-            // Colocando botão de retorno no topo de cada lista
-            let elementosLimpos = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");        
+            // Inserindo botão VOLTAR fixo no topo de cada menu
+            let elementosLimpos = document.querySelectorAll("ul:not(.menu-items)");        
             
             for (let elemento of elementosLimpos) {
                 let voltar = document.createElement("LI");
@@ -42,7 +40,7 @@ function montarCena(nomeCena) {
                 elemento.appendChild(hr);
             }; 
 
-            // Criando e concatenando elementos li a lista
+            // Inserindo locais
             let i = 0;
             for (let local of locais) {
                 let li = document.createElement("LI");
@@ -53,6 +51,7 @@ function montarCena(nomeCena) {
                 i++;
             };
 
+            // Inserindo Atores
             i = 0;
             for (let ator of atores) {
                 let li = document.createElement("LI");
@@ -63,6 +62,7 @@ function montarCena(nomeCena) {
                 i++;
             }
 
+            // Inserindo Pontos de Interesse
             i = 0;
             for (let ponto of pontosInteresse) {
                 let li = document.createElement("LI");
@@ -76,6 +76,10 @@ function montarCena(nomeCena) {
         .catch(err => {
             console.log("Request Inválido. Checar url do arquivo.")
         })    
+}
+
+function atualizarCena(arrayLocais, arrayAtores, arrayPontos) {
+
 }
 
 function limparCena() {

@@ -23,30 +23,14 @@
                     <li onclick="mostrarItem('.falar-items')">Falar</li>
                     <li onclick="mostrarItem('.inventario-items')">Inventário</li>
                 </ul>
-                
-                <ul style="display: none" class="movimento-items">
-                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
-                    <hr>
-                </ul>
-    
-                <ul style="display: none" class="examinar-items">
-                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
-                    <hr>
-                </ul>
-
-                <ul style="display: none" class="falar-items">
-                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
-                    <hr>
-                </ul>                
-    
-                <ul style="display: none" class="inventario-items">
-                    <li onclick="mostrarItem('.menu-items')">VOLTAR</li>
-                    <hr>
-                </ul>
+                <ul style="display: none" class="movimento-items"></ul>
+                <ul style="display: none" class="examinar-items"></ul>
+                <ul style="display: none" class="falar-items"></ul>                
+                <ul style="display: none" class="inventario-items"></ul>
             </div>
     
             <div class="tela-container">
-               
+                
             </div>
             
             <div class="text-container">
@@ -55,6 +39,7 @@
             </div>
         </div>
 
+        <!-- TODO: Esconder ao fim da produção -->
         <div style="border: 1px solid white; margin-top: 6px; padding: 12px" class="debug">
             <div style="color: white">Debug:</div>
             <button onclick="carregarCena()">Montar Cena</button>
