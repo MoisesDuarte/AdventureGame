@@ -24,8 +24,8 @@
             "estados" : ["neutro", "irritado", "perplexo"],
             "falas":{
                "neutro":[
-                  "Ramon: Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
-                  "Ramon: Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
+                  "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
+                  "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
                ]
             }
          }
