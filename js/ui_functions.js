@@ -29,7 +29,7 @@ function montarCena(nomeCena) {
             telaContainer.style.backgroundImage = background;
 
             // Inserindo botão VOLTAR fixo no topo de cada menu
-            let elementosLimpos = document.querySelectorAll("ul:not(.menu-items):not(.inventario-items)");        
+            let elementosLimpos = document.querySelectorAll("ul:not(.menu-items)");        
             
             for (let elemento of elementosLimpos) {
                 let voltar = document.createElement("LI");
