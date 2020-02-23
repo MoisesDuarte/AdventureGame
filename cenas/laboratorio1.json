@@ -12,13 +12,16 @@
       "pontosInteresse":[
          {
             "nome":"Computador",
-            "descricao":"Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo."
+            "descricao": [
+               "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
+               "Uma pena, realmente, mas fazer o quê."
+            ]
          }
       ],
       "atores":[
          {
-            "estado":"ramonNeutro",
             "nome":"Prof. Ramon",
+            "estados" : ["neutro", "irritado", "perplexo"],
             "falas":{
                "neutro":[
                   "Ramon: Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",

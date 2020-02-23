@@ -12,7 +12,10 @@
       "pontosInteresse":[
          {
             "nome":"Lâmp. de Chão",
-            "descricao":"Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã."
+            "descricao": [
+               "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
+               "Não há nenhum interruptor vísivel, então não posso fazer nada."
+            ]
          }
       ],
       "atores":[

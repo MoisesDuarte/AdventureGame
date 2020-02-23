@@ -18,6 +18,9 @@ function montarCena(nomeCena) {
             let pontosInteresse = cenaJson[0].pontosInteresse;
             let atores = cenaJson[0].atores;
 
+            console.log(pontosInteresse[0].descricao);
+            console.log(atores[0].falas["neutro"]);
+
             // Elementos da cena
             let telaContainer = document.querySelector(".tela-container");
             let movimentoContainer = document.querySelector(".movimento-items");
@@ -55,7 +58,7 @@ function montarCena(nomeCena) {
                 let li = document.createElement("LI");
                 li.id = 'ator' + i;
                 li.innerHTML = ator.nome;
-                li.addEventListener("click", function() {mostrarFala(ator.falas["neutro"])});
+                li.addEventListener("click", function() {mostrarTexto(ator.falas["neutro"])});
                 falarContainer.appendChild(li);
                 i++;
             }
@@ -65,7 +68,7 @@ function montarCena(nomeCena) {
                 let li = document.createElement("LI");
                 li.id = "ponto" + i;
                 li.innerHTML = ponto.nome;
-                li.addEventListener("click", function() {mostrarDescricao(ponto.descricao)});
+                li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
                 examinarContainer.appendChild(li);
                 i++;
             }    
@@ -86,9 +89,9 @@ function limparCena() {
 }
 
 // FUNÇÕES PARA CONTROLE DA INTERFACE
-function mostrarItem(newClass) {
+function mostrarItem(item) {
     let el = document.body.querySelectorAll("ul");
-    let newEl = document.body.querySelector(newClass);
+    let newEl = document.body.querySelector(item);
 
     el.forEach(element => {
         element.style.display = "none";
@@ -97,13 +100,7 @@ function mostrarItem(newClass) {
     newEl.style.display = "block";
 }
 
-function mostrarDescricao(txt) {
-    let el = document.querySelector(".text-conteudo");
-    el.innerHTML = "";
-    el.innerHTML = txt;
-}
-
-function mostrarFala(arrayFalas) {
+function mostrarTexto(arrayFalas) {
     let i = 0;
     let textContainer = document.querySelector(".text-container");
     let textConteudo = document.querySelector(".text-conteudo");
