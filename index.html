@@ -7,10 +7,12 @@
     <title>AdventureGame</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/ui_functions.js"></script>
+    <script type="text/javascript" src="js/ui_functions.js"></script>
     
-    <script type="text/javascript">
-        function carregarCena() { montarCena('blocoA') }        
+    <script type="module">
+        window.onload = () => {
+            montarCena("blocoA");
+        }      
     </script>
 </head>
 <body>
@@ -42,7 +44,7 @@
         <!-- TODO: Esconder ao fim da produção -->
         <div style="border: 1px solid white; margin-top: 6px; padding: 12px" class="debug">
             <div style="color: white">Debug:</div>
-            <button onclick="carregarCena()">Montar Cena</button>
+            <button onclick="montarCena('blocoA')">Cena Inicial</button>
             <button onclick="bloquearMenu()">Bloquear Menu</button>
             <button onclick="permitirMenu()">Desbloquer Menu</button>
         </div>
