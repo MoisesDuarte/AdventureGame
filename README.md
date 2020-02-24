@@ -15,35 +15,38 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 
 ```json
 [
-   {
-      "nome":"",
-      "descricao":"",
-      "fundo":"",
-      "locais":[
-         {
-            "nome":"",
-            "destino":""
-         }
-      ],
-      "pontosInteresse":[
-         {
-            "nome":"",
-            "descricao":""
-         }
-      ],
-      "atores":[
-         {
-            "estado":"",
-            "nome":"",
-            "falas":{
-               "neutro":[
-                  ""
-               ]
-            }
-         }
-      ]
-   }
-]
+    {
+       "nome":"",
+       "descricao":"",
+       "fundo":"",
+       "locais":[
+          {
+             "nome":"",
+             "destino":""
+          }
+       ],
+       "pontosInteresse":[
+          {
+             "nome":"",
+             "descricao": [
+                "",
+                ""
+             ]
+          }
+       ],
+       "atores":[
+          {
+             "estado":"",
+             "nome":"",
+             "falas":{
+                "neutro":[
+                   ""
+                ]
+             }
+          }
+       ]
+    }
+ ]
 ```
 
 - Para acessa-lá, adicione a cena como um local em uma cena anterior
