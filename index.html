@@ -12,29 +12,14 @@
     
     <script>
         window.onload = () => {
-            montarCena("blocoA");
-        }      
-
-        function trocarEstado() {
-            fetch("./cenas/laboratorio1.json")
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                let jsonstring = JSON.stringify(data);
-                let cenaJson = JSON.parse(jsonstring);
-                let atorObj = cenaJson.atores;
-
-                let el = document.querySelectorAll(".falar-items > li");
-
-            })
-
+            guardarCenas();
         }
     </script>
 </head>
 <body>
     <div class="site-container">
         <div class="grid-container">
+            
             <div class="menu-container">
                 <ul class="menu-items">
                     <li onclick="mostrarItem('.movimento-items')">Mover</li>
@@ -61,10 +46,10 @@
         <!-- TODO: Esconder ao fim da produção -->
         <div style="border: 1px solid white; margin-top: 6px; padding: 12px" class="debug">
             <div style="color: white">Debug:</div>
-            <button onclick="montarCena('blocoA')">Cena Inicial</button>
+            <button onclick="montarCena('Bloco A')">Cena Inicial</button>
             <button onclick="bloquearMenu()">Bloquear Menu</button>
             <button onclick="permitirMenu()">Desbloquer Menu</button>
-            <button onclick="trocarEstado()">Trocar Estado Ator</button>
+            <button onclick="testarLocalStorage()">Testar LocalStorage</button>
         </div>
 
     </div>
