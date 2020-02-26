@@ -1,35 +1,33 @@
-[
-   {
-      "nome":"Bloco A",
-      "descricao":"",
-      "fundo":"BackgroundBlocoA.jpg",
-      "locais":[
-         {
-            "nome":"Laboratório 1",
-            "destino":"laboratorio1"
-         }
-      ],
-      "pontosInteresse":[
-         {
-            "nome":"Lâmp. de Chão",
-            "descricao": [
-               "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
-               "Não há nenhum interruptor vísivel, então não posso fazer nada."
+{
+   "nome":"Bloco A",
+   "descricao":"",
+   "fundo":"BackgroundBlocoA.jpg",
+   "locais":[
+      {
+         "nome":"Laboratório 1",
+         "destino":"laboratorio1"
+      }
+   ],
+   "pontosInteresse":[
+      {
+         "nome":"Lâmp. de Chão",
+         "descricao": [
+            "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
+            "Não há nenhum interruptor vísivel, então não posso fazer nada."
+         ]
+      }
+   ],
+   "atores":[
+      {
+         "estado":"luizNeutro",
+         "nome":"Coord. Luiz",
+         "falas":{
+            "neutro":[
+               "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
+               "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
+               "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
             ]
          }
-      ],
-      "atores":[
-         {
-            "estado":"luizNeutro",
-            "nome":"Coord. Luiz",
-            "falas":{
-               "neutro":[
-                  "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
-                  "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
-                  "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
-               ]
-            }
-         }
-      ]
-   }
-]
+      }
+   ]
+}

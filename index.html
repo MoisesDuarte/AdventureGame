@@ -10,10 +10,27 @@
     <script type="text/javascript" src="./js/cena_functions.js"></script>
     <script type="text/javascript" src="./js/ui_functions.js"></script>
     
-    <script type="module">
+    <script>
         window.onload = () => {
             montarCena("blocoA");
         }      
+
+        function trocarEstado() {
+            fetch("./cenas/laboratorio1.json")
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                let jsonstring = JSON.stringify(data);
+                let cenaJson = JSON.parse(jsonstring);
+                let atorObj = cenaJson.atores;
+
+                let el = document.querySelectorAll(".falar-items > li");
+
+                console.log(atorObj);
+            })
+
+        }
     </script>
 </head>
 <body>
@@ -48,6 +65,7 @@
             <button onclick="montarCena('blocoA')">Cena Inicial</button>
             <button onclick="bloquearMenu()">Bloquear Menu</button>
             <button onclick="permitirMenu()">Desbloquer Menu</button>
+            <button onclick="trocarEstado()">Trocar Estado Ator</button>
         </div>
 
     </div>

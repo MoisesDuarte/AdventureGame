@@ -15,10 +15,10 @@ function montarCena(nomeCena) {
             let cenaJson = JSON.parse(jsonstring);
 
             // Definições de Cena
-            let background = "url('img/" + cenaJson[0].fundo + "')";
-            let locais = cenaJson[0].locais;
-            let pontosInteresse = cenaJson[0].pontosInteresse;
-            let atores = cenaJson[0].atores;
+            let background = "url('img/" + cenaJson.fundo + "')";
+            let locais = cenaJson.locais;
+            let pontosInteresse = cenaJson.pontosInteresse;
+            let atores = cenaJson.atores;
 
             // Elementos da Interface
             let telaContainer = document.querySelector(".tela-container");
