@@ -59,7 +59,7 @@ function montarCena(nomeCena) {
                 let li = document.createElement("LI");
                 li.id = 'ator_' + ator.id;
                 li.innerHTML = ator.nome;
-                li.addEventListener("click", function() {mostrarTexto(ator.falas["neutro"])});
+                li.addEventListener("click", function() {mostrarTexto(ator.falas[ator.estado])});
                 falarContainer.appendChild(li);
                 i++;
             }

@@ -23,7 +23,7 @@
       {
          "id" : "1",
          "nome":"Coord. Luiz",
-         "estado":"luizNeutro",
+         "estado":"neutro",
          "falas":{
             "neutro":[
                "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
