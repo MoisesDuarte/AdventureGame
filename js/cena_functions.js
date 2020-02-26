@@ -46,7 +46,7 @@ function montarCena(nomeCena) {
             let i = 0;
             for (let local of locais) {
                 let li = document.createElement("LI");
-                li.id = "local" + i;
+                li.id = "local_" + local.id;
                 li.innerHTML = local.nome;
                 li.addEventListener("click", function() {montarCena(local.destino)});
                 movimentoContainer.appendChild(li);
@@ -57,7 +57,7 @@ function montarCena(nomeCena) {
             i = 0;
             for (let ator of atores) {
                 let li = document.createElement("LI");
-                li.id = 'ator' + i;
+                li.id = 'ator_' + ator.id;
                 li.innerHTML = ator.nome;
                 li.addEventListener("click", function() {mostrarTexto(ator.falas["neutro"])});
                 falarContainer.appendChild(li);
@@ -68,12 +68,15 @@ function montarCena(nomeCena) {
             i = 0;
             for (let ponto of pontosInteresse) {
                 let li = document.createElement("LI");
-                li.id = "ponto" + i;
+                li.id = "ponto" + ponto.id;
                 li.innerHTML = ponto.nome;
                 li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
                 examinarContainer.appendChild(li);
                 i++;
             }    
+
+            console.log(document.querySelectorAll("li"));
+
         })
         .catch(err => {
             console.log("Request Inválido. Checar url do arquivo.")
