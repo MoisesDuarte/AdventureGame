@@ -17,7 +17,7 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 
 ### Adicionando Cenas
 
-- Na pasta cenas, crie um arquivo JSON com o nome da cena que deseja criar, utilizando o seguinte formato.
+- Na pasta cenas, crie um novo objeto no arquivo _cenas.json com a seguinte sintaxe.
 
 ```json
 {
@@ -61,8 +61,7 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 "locais":[
    {
       "id" : "1",
-      "nome":"Laboratório 1",
-      "destino":"laboratorio1"
+      "nome":"Laboratório 1", // Nome Igual ao definido no objeto da cena de referência
    }
 ]
 ```
