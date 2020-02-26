@@ -1,16 +1,17 @@
-
 {
    "nome":"Laborat\u00f3rio 1",
    "descricao":"",
    "fundo":"BackgroundLaboratorio1.jpg",
    "locais":[
       {
+         "id" : "1",
          "nome":"Bloco A",
          "destino":"blocoA"
       }
    ],
    "pontosInteresse":[
       {
+         "id" : "1",
          "nome":"Computador",
          "descricao": [
             "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
@@ -20,8 +21,9 @@
    ],
    "atores":[
       {
+         "id" : "1",
          "nome":"Prof. Ramon",
-         "estados" : ["neutro", "perplexo"],
+         "estado" : "neutro",
          "falas":{
             "neutro":[
                "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
@@ -29,6 +31,16 @@
             ],
             "irritado": [
                "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor."
+            ]
+         }
+      },
+      {
+         "id" : "2",
+         "nome":"Prof. Luiz",
+         "estado" : "neutro",
+         "falas":{
+            "neutro":[
+               "Luiz:<br>Não ligue para mim, estou apenas de assistente aqui."
             ]
          }
       }

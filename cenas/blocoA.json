@@ -4,12 +4,14 @@
    "fundo":"BackgroundBlocoA.jpg",
    "locais":[
       {
+         "id" : "1",
          "nome":"Laboratório 1",
          "destino":"laboratorio1"
       }
    ],
    "pontosInteresse":[
       {
+         "id" : "1",
          "nome":"Lâmp. de Chão",
          "descricao": [
             "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
@@ -19,8 +21,9 @@
    ],
    "atores":[
       {
-         "estado":"luizNeutro",
+         "id" : "1",
          "nome":"Coord. Luiz",
+         "estado":"luizNeutro",
          "falas":{
             "neutro":[
                "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
