@@ -4,6 +4,7 @@ function montarCena(nomeCena) {
     // Limpa a cena
     limparCena();
 
+    // TODO: Transformar esse bloco de em uma função, para utilizar em funções de atualização, etc
     let jsonStorage = localStorage.getItem('cenas');
     let cenaJson = JSON.parse(jsonStorage);
     let idCena;
@@ -88,7 +89,7 @@ function limparCena() {
     textoAntigo.innerHTML = "";
 }
 
-function guardarCenas() {
+function guardarCenasInicial() {
     fetch('./cenas/_cenas.json')
     .then(response => {
         return response.json()

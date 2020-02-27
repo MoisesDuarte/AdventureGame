@@ -14,11 +14,20 @@
         window.onload = () => {
             if (localStorage.getItem('cenas') === null) {
                 console.log("Campo de Cenas Vazio. Guardando cenas...")
-                guardarCenas();
+                guardarCenasInicial();
             } else {
                 console.log("Cenas já estão guardadas. Carregando jogo...")
-                montarCena("Bloco A");
+                montarCena("Laboratório 1");
             }
+        }
+
+        function trocarEstado() {
+            let jsonStorage = localStorage.getItem('cenas');
+            let cenaJson = JSON.parse(jsonStorage);
+
+            cenaJson[0].atores[0].estado = "irritado";
+
+            localStorage.setItem('cenas', JSON.stringify(cenaJson));
         }
     </script>
 </head>
