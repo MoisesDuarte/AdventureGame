@@ -1,8 +1,10 @@
 function montarCena(nomeCena) {
     limparCena();
 
-    let jsonStorage = localStorage.getItem('cenas');
-    let cenaJson = JSON.parse(jsonStorage);
+    let jsonCena = localStorage.getItem('cenas');
+    let jsonInv = localStorage.getItem('inventario');
+    let cenaJson = JSON.parse(jsonCena);
+    let invJson = JSON.parse(jsonInv);
     let idCena;
 
     for (let i = 0; i < cenaJson.length; i++) {
@@ -15,11 +17,13 @@ function montarCena(nomeCena) {
     let arrayLocais = cenaJson[idCena].locais;
     let arrayPontos = cenaJson[idCena].pontosInteresse;
     let arrayAtores = cenaJson[idCena].atores;
+    let arrayInventario = invJson;
 
     let cTela = document.querySelector('.tela-container');
     let cMovimento = document.querySelector('.movimento-items');
     let cExaminar = document.querySelector('.examinar-items');
     let cFalar = document.querySelector('.falar-items');
+    let cInventario = document.querySelector('.inventario-items');
 
     cTela.style.backgroundImage = background;
 
@@ -28,40 +32,42 @@ function montarCena(nomeCena) {
         let voltar = document.createElement('li');
         let hr = document.createElement('hr');
         voltar.innerHTML = 'VOLTAR';
-        voltar.addEventListener('click', () => {mostrarItem('.menu-items')});
+        voltar.addEventListener('click', () => { mostrarItem('.menu-items') });
         elemento.appendChild(voltar);
         elemento.appendChild(hr);
     }
 
-    let i = 0;
     for (let local of arrayLocais) {
         let li = document.createElement('li');
         li.id = 'local_' + local.id;
         li.innerHTML = local.nome;
-        li.addEventListener('click', function() {montarCena(local.nome)});
+        li.addEventListener('click', () => { montarCena(local.nome) });
         cMovimento.appendChild(li);
-        i++;
     }
 
-    i = 0;
     for (let ponto of arrayPontos) {
         let li = document.createElement('li');
         li.id = 'ponto_' + ponto.id;
         li.innerHTML = ponto.nome;
-        li.addEventListener('click', function() {mostrarTexto(ponto.descricao)});
+        li.addEventListener('click', () => { mostrarTexto(ponto.descricao) });
         cExaminar.appendChild(li);
-        i++;
     }
 
-    i = 0;
     for (let ator of arrayAtores) {
         let li = document.createElement('li');
         li.id = 'ator_' + ator.id;
         li.innerHTML = ator.nome;
-        li.addEventListener('click', function() {mostrarTexto(ator.falas[ator.estado])});
+        li.addEventListener('click', () => { mostrarTexto(ator.falas[ator.estado]) });
         cFalar.appendChild(li);
-        i++;
     }    
+
+    for (let item of arrayInventario) {
+        let li = document.createElement('li');
+        li.id = 'item_' + item.id;
+        li.innerHTML = item.nome;
+        li.addEventListener('click', () => { console.log('Click em item ' + item.nome) });
+        cInventario.appendChild(li);
+    }
 };
 
 
