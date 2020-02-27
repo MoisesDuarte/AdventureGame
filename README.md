@@ -8,9 +8,9 @@ Uma GUI para jogos de aventura baseada em jogos de aventura clássicos (Uninvite
 
 ## Imagens
 
-![Screenshot 00](img/screenshots/screen00.png)
-![Screenshot 01](img/screenshots/screen01.png)
-![Screenshot 02](img/screenshots/screen02.png)
+<img src="img/screenshots/screen00.png" width="606">
+<img src="img/screenshots/screen01.png" width="606">
+<img src="img/screenshots/screen02.png" width="606">
 
 ## Utilização
 
