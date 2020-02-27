@@ -25,9 +25,11 @@
             let jsonStorage = localStorage.getItem('cenas');
             let cenaJson = JSON.parse(jsonStorage);
 
-            cenaJson[0].atores[0].estado = "irritado";
+            cenaJson[0].atores[0].estado = "neutro";
 
             localStorage.setItem('cenas', JSON.stringify(cenaJson));
+
+            montarCena("Laboratório 1");
         }
     </script>
 </head>
