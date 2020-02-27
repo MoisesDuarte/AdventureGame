@@ -76,18 +76,20 @@ function limparCena() {
 };
 
 
-function guardarCenasInicial() {
-    fetch('./cenas/_cenas.json')
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        let stringJson = JSON.stringify(data);
-        let cenaObj = JSON.parse(stringJson);
+function guardarEstadoInicial() {
+    fetch('../cenas/_cenas.json')
+        .then(res => { return res.json() })
+        .then(data => {
+            let cenasJson = JSON.stringify(data);
+            localStorage.setItem('cenas', cenasJson);      
+        });
 
-        localStorage.setItem('cenas', stringJson);
-        location.reload();
-    })
+    fetch('../cenas/_inventario.json')
+        .then(res => { return res.json() })
+        .then(data => {
+            let inventarioJson = JSON.stringify(data);
+            localStorage.setItem('inventario', inventarioJson)
+        })
 };
 
 

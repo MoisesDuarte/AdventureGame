@@ -14,7 +14,7 @@
         window.onload = () => {
             if (localStorage.getItem('cenas') === null) {
                 console.log("Campo de Cenas Vazio. Guardando cenas...")
-                guardarCenasInicial();
+                guardarEstadoInicial();
             } else {
                 console.log("Cenas já estão guardadas. Carregando jogo...")
                 montarCena("Laboratório 1");
