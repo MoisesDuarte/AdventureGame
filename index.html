@@ -20,17 +20,6 @@
                 montarCena("Laboratório 1");
             }
         }
-
-        function trocarEstado() {
-            let jsonStorage = localStorage.getItem('cenas');
-            let cenaJson = JSON.parse(jsonStorage);
-
-            cenaJson[0].atores[0].estado = "neutro";
-
-            localStorage.setItem('cenas', JSON.stringify(cenaJson));
-
-            montarCena("Laboratório 1");
-        }
     </script>
 </head>
 <body>
@@ -66,7 +55,7 @@
             <button onclick="montarCena('Bloco A')">Cena Inicial</button>
             <button onclick="bloquearMenu()">Bloquear Menu</button>
             <button onclick="permitirMenu()">Desbloquer Menu</button>
-            <button onclick="trocarEstado()">Trocar Estado Ator</button>
+            <button onclick="trocarEstadoAtor(0, 'Prof. Ramon', 'irritado')">Trocar Estado Ator</button>
         </div>
 
     </div>

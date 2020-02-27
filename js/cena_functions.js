@@ -102,3 +102,18 @@ function guardarCenasInicial() {
         location.reload();
     })
 }
+
+function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
+    let jsonStorage = localStorage.getItem('cenas');
+    let cenaJson = JSON.parse(jsonStorage);
+
+    for (let i = 0; i < cenaJson[idCena].atores.length; i++) {
+        if (cenaJson[idCena].atores[i].nome == nomeAtor) {
+            cenaJson[idCena].atores[i].estado = estadoNovo;
+        }
+    }
+    
+    localStorage.setItem('cenas', JSON.stringify(cenaJson));
+
+    montarCena(cenaJson[idCena].nome);
+}
