@@ -53,7 +53,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'ponto_' + ponto.id;
         li.innerHTML = ponto.nome;
-        li.addEventListener('click', () => { mostrarTexto(ponto.descricao) });
+        li.addEventListener('click', () => { mostrarTexto(ponto.descricoes[0].descricao) });
         cExaminar.appendChild(li);
     }
 
@@ -82,6 +82,8 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + pontoInteracao.nome;
         li.innerHTML = pontoInteracao.nome;
+        li.dataset.trigger = pontoInteracao.descricoes[1].itemTrigger;
+        console.log(pontoInteracao.descricoes)
         li.addEventListener('click', () => { console.log("Interação com " + pontoInteracao.nome) });
         cInteracoes.appendChild(li);
     }
@@ -93,9 +95,12 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + atorInteracao.nome;
         li.innerHTML = atorInteracao.nome;
+        li.dataset.trigger = atorInteracao.falas[1].itemTrigger;
         li.addEventListener('click', () => { console.log('Interação com ' + atorInteracao.nome) });
         cInteracoes.appendChild(li);
     }
+
+    console.log(cInteracoes.childNodes)
 };
 
 
@@ -123,6 +128,7 @@ function guardarEstadoInicial() {
         .then(data => {
             let inventarioJson = JSON.stringify(data);
             localStorage.setItem('inventario', inventarioJson)
+            location.reload();
         })
 };
 

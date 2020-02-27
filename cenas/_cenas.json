@@ -14,9 +14,22 @@
            {
               "id" : "1",
               "nome":"Computador",
-              "descricao": [
-                 "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
-                 "Uma pena, realmente, mas fazer o quê."
+              "descricoes": [
+                 {
+                    "estado": "neutro",
+                    "itemTrigger": "nenhum",
+                    "descricao": [
+                        "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
+                        "Uma pena, realmente, mas fazer o quê."
+                    ]
+                 },
+                 {
+                  "estado": "ligado",
+                  "itemTrigger": "tomada",
+                  "descricao": [
+                      "Adivinhe só, a tomada estava partida. Agora está ligado."
+                  ]
+                 } 
               ]
            }
         ],
@@ -58,12 +71,26 @@
            }
         ],
         "pontosInteresse":[
-           {
+            {
               "id" : "1",
-              "nome":"Lâmp. de Chão",
-              "descricao": [
-                 "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
-                 "Não há nenhum interruptor vísivel, então não posso fazer nada."
+              "nome":"Lamp. de Chão",
+              "estado": "neutro",
+              "descricoes": [
+                 {
+                    "estado": "neutro",
+                    "itemTrigger": "nenhum",
+                    "descricao": [
+                        "Por algum motivo, está ligada.",
+                        "Quem sabe eu deva desliga-lá."
+                    ]
+                 },
+                 {
+                     "estado": "apagada",
+                     "itemTrigger": "interruptor",
+                     "descricao": [
+                        "Está desligada."
+                    ]
+                 } 
               ]
            }
         ],
