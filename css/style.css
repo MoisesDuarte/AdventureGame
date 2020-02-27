@@ -27,9 +27,9 @@ body {
 .grid-container {
     display: grid;
     grid-template-areas: 
-        'menu main'
+        'main menu'
         'footer footer';
-    grid-template-columns: 160px 640px;
+    grid-template-columns: 640px 160px;
     grid-template-rows: 480px 120px;
     grid-gap: 2px;
 }
