@@ -115,3 +115,48 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
            }
         ]
 ```
+
+### Interação com itens
+
+- Definir item no inventario
+
+```json
+{
+   "id": "0",
+   "nome": "Fotos Enchente",
+   "descricao": "Fotos da enchente de Júquia, manipuladas pela imprensa."
+}
+```
+
+- Definir referência a nome de item em estados do objeto
+
+Ator:
+
+```json
+{
+   "falas": [
+      {
+         "idEstado": "1",
+         "itemTrigger": "Fotos Enchente",
+         "dialogo": [
+            "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
+            "Ramon:<br>Sorte sua que falsidade é um crime ainda não reconhecido pela legislação."
+         ]
+      }
+   ]
+}
+```
+
+Ponto de Interesse:
+
+```json
+"descricoes": [
+      {
+         "idEstado": "1",
+         "itemTrigger": "Tomada",
+         "descricao": [
+            "Adivinhe só, a tomada estava partida. Agora está ligado."
+         ]
+      }
+   ]
+```
