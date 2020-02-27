@@ -51,9 +51,20 @@ function mostrarItem(arrayItem) {
     elTitle.innerHTML = 'USAR EM:';
 
     mostrarMenu('.inventario-interacoes');
-     
-    console.log(cInteracoes);
 };
+
+
+function checarInteracao(objTriggers) {
+    let cInteracoes = document.querySelector('.inventario-interacoes');
+    let itemAtivo = cInteracoes.dataset.itemAtivo;
+
+    for (let trigger of objTriggers) {
+        if (trigger.itemTrigger) {
+            console.log("Interação Válida");
+        }
+    }
+
+}
 
 
 function bloquearMenu() {

@@ -82,34 +82,16 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + pontoInteracao.nome;
         li.innerHTML = pontoInteracao.nome;
-
-        // Array de Triggers do Objeto
-        let triggers = [];
-        for (let trigger of pontoInteracao.descricoes) {
-            triggers.push(trigger.itemTrigger);
-        }
-
-        li.dataset.triggers = triggers;
-        li.addEventListener('click', () => {  });
+        li.addEventListener('click', () => { checarInteracao(pontoInteracao.descricoes) });
         cInteracoes.appendChild(li);
-        console.log(li)
     }
 
     for (let atorInteracao of arrayAtores) {
         let li = document.createElement('li');
         li.id = 'interacao_' + atorInteracao.nome;
         li.innerHTML = atorInteracao.nome;
-
-        // Array de Triggers do Ator
-        let triggers = [];
-        for (let trigger of atorInteracao.falas) {
-            triggers.push(trigger.itemTrigger);
-        }
-
-        li.dataset.triggers = triggers;
-        li.addEventListener('click', () => { console.log('interacao') });
+        li.addEventListener('click', () => { checarInteracao(atorInteracao.falas) });
         cInteracoes.appendChild(li);
-        console.log(li)
     }
 };
 
