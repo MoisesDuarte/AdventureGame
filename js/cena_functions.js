@@ -12,7 +12,6 @@ function montarCena(nomeCena) {
     // Procurando a cena com base em nome passado
     for (let i = 0; i < cenaJson.length; i++) {
         if (cenaJson[i].nome == nomeCena) {
-            console.log("Achei! - " + cenaJson[i].nome);
             idCena = i;
         }
     }
@@ -76,8 +75,7 @@ function montarCena(nomeCena) {
         li.addEventListener("click", function() {mostrarTexto(ponto.descricao)});
         examinarContainer.appendChild(li);
         i++;
-    }
-    
+    }   
     
 }
 

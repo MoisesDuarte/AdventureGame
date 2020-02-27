@@ -12,7 +12,13 @@
     
     <script>
         window.onload = () => {
-            guardarCenas();
+            if (localStorage.getItem('cenas') === null) {
+                console.log("Campo de Cenas Vazio. Guardando cenas...")
+                guardarCenas();
+            } else {
+                console.log("Cenas já estão guardadas. Carregando jogo...")
+                montarCena("Bloco A");
+            }
         }
     </script>
 </head>
@@ -49,7 +55,7 @@
             <button onclick="montarCena('Bloco A')">Cena Inicial</button>
             <button onclick="bloquearMenu()">Bloquear Menu</button>
             <button onclick="permitirMenu()">Desbloquer Menu</button>
-            <button onclick="testarLocalStorage()">Testar LocalStorage</button>
+            <button onclick="trocarEstado()">Trocar Estado Ator</button>
         </div>
 
     </div>
