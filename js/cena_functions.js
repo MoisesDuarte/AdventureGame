@@ -31,8 +31,9 @@ function montarCena(nomeCena) {
     for (let elemento of elementosLimpos) {
         let voltar = document.createElement('li');
         let hr = document.createElement('hr');
+        voltar.id = 'voltar_' + elemento.className;
         voltar.innerHTML = 'VOLTAR';
-        voltar.addEventListener('click', () => { mostrarItem('.menu-items') });
+        voltar.addEventListener('click', () => { mostrarMenu('.menu-items') });
         elemento.appendChild(voltar);
         elemento.appendChild(hr);
     }
@@ -65,7 +66,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'item_' + item.id;
         li.innerHTML = item.nome;
-        li.addEventListener('click', () => { console.log('Click em item ' + item.nome) });
+        li.addEventListener('click', () => { mostrarItem( item.nome + "<br>" + item.descricao ) });
         cInventario.appendChild(li);
     }
 };

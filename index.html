@@ -20,6 +20,7 @@
                 montarCena("Laboratório 1");
             }
         }
+
     </script>
 </head>
 <body>
@@ -28,15 +29,17 @@
             
             <div class="menu-container">
                 <ul class="menu-items">
-                    <li onclick="mostrarItem('.movimento-items')">Mover</li>
-                    <li onclick="mostrarItem('.examinar-items')">Examinar</li>
-                    <li onclick="mostrarItem('.falar-items')">Falar</li>
-                    <li onclick="mostrarItem('.inventario-items')">Inventário</li>
+                    <li onclick="mostrarMenu('.movimento-items')">Mover</li>
+                    <li onclick="mostrarMenu('.examinar-items')">Examinar</li>
+                    <li onclick="mostrarMenu('.falar-items')">Falar</li>
+                    <li onclick="mostrarMenu('.inventario-items')">Inventário</li>
                 </ul>
                 <ul style="display: none" class="movimento-items"></ul>
                 <ul style="display: none" class="examinar-items"></ul>
                 <ul style="display: none" class="falar-items"></ul>                
-                <ul style="display: none" class="inventario-items"></ul>
+                <ul style="display: none" class="inventario-items">
+                    <ul style="display:none" class="inventario-interacoes">Teste</ul>
+                </ul>
             </div>
     
             <div class="tela-container">

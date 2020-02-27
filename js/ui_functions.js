@@ -1,12 +1,12 @@
-function mostrarItem(item) {
+function mostrarMenu(menu) {
     let el = document.body.querySelectorAll('ul');
-    let newEl = document.body.querySelector(item);
+    let novoEl = document.body.querySelector(menu);
 
     el.forEach(element => {
         element.style.display = 'none';
     });
 
-    newEl.style.display = 'block';
+    novoEl.style.display = 'block';
 };
 
 
@@ -39,6 +39,16 @@ function mostrarTexto(arrayFalas) {
         }
     });
 };
+
+function mostrarItem(item) {
+    let cText = document.querySelector('.text-conteudo');
+    let elVoltar = document.querySelectorAll('.examinar-items > li');
+    console.log(elVoltar)
+    
+    cText.innerHTML = item;
+
+    mostrarMenu('.examinar-items');
+}
 
 
 function bloquearMenu() {
