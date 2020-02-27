@@ -125,6 +125,18 @@ function guardarEstadoInicial() {
 };
 
 
+function checarInteracao(objTriggers) {
+    let cInteracoes = document.querySelector('.inventario-interacoes');
+    let itemAtivo = cInteracoes.dataset.itemAtivo;
+
+    for (let trigger of objTriggers) {
+        if (trigger.itemTrigger == itemAtivo) {
+            console.log("Interação Válida");
+        }
+    }
+};
+
+
 function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     let jsonStorage = localStorage.getItem('cenas');
     let cenaJson = JSON.parse(jsonStorage);

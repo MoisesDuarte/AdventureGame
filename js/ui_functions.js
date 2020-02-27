@@ -53,19 +53,6 @@ function mostrarItem(arrayItem) {
 };
 
 
-function checarInteracao(objTriggers) {
-    let cInteracoes = document.querySelector('.inventario-interacoes');
-    let itemAtivo = cInteracoes.dataset.itemAtivo;
-
-    for (let trigger of objTriggers) {
-        if (trigger.itemTrigger == itemAtivo) {
-            console.log("Interação Válida");
-        }
-    }
-
-}
-
-
 function bloquearMenu() {
     let elMenus = document.querySelectorAll('li');
     for (let menu of elMenus) {
