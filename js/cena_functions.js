@@ -126,6 +126,7 @@ function guardarEstadoInicial() {
 
 
 function checarInteracao(idCena, nome, objTriggers, tipo) {
+    let cText = document.querySelector('.text-conteudo');
     let cInteracoes = document.querySelector('.inventario-interacoes');
     let itemAtivo = cInteracoes.dataset.itemAtivo;
 
@@ -137,6 +138,8 @@ function checarInteracao(idCena, nome, objTriggers, tipo) {
             } else if (tipo == 'ponto') {
                 console.log("Interação com ponto");
             }
+        } else {
+            cText.innerHTML = 'Você utiliza <i>' + itemAtivo + '</i> em <i>' + nome + '</i> mas nada acontece.';
         }
     }
 };
@@ -149,6 +152,8 @@ function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     for (let ator of cenaJson[idCena].atores) {
         if (ator.nome == nomeAtor) {
             ator.estado = estadoNovo;
+            montarCena(cenaJson[idCena].nome)
+            mostrarMenu('.falar-items');
         }
     }   
     
