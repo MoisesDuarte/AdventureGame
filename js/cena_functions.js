@@ -150,7 +150,7 @@ function checarInteracao(idCena, nome, objTriggers, tipo) {
             if (tipo == 'ator') {
                 trocarEstadoAtor(idCena, nome, trigger.idEstado);
             } else if (tipo == 'ponto') {
-                console.log("Interação com ponto");
+                trocarEstadoPonto(idCena, nome, trigger.idEstado);
             }
         } else {
             // Mensagem caso não for possível utilizar o item com objeto
@@ -167,16 +167,31 @@ function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     // Procura por ator com base em nome e troca seu estado pelo novo
     for (let ator of cenaJson[idCena].atores) {
         if (ator.nome == nomeAtor) {
-            ator.estado = estadoNovo;
-            montarCena(cenaJson[idCena].nome)
-            mostrarMenu('.falar-items');
+            ator.estado = estadoNovo;    
         }
     }   
     
-    // Salvando cenas atualizadas em localStorage 
+    // Salvando cenas atualizadas em localStorage e atualizando ui
     localStorage.setItem('cenas', JSON.stringify(cenaJson));
+    montarCena(cenaJson[idCena].nome)
+    mostrarMenu('.falar-items');
 
     // TODO: Apagar item do inventário após uso
+}
 
-    montarCena(cenaJson[idCena].nome);
+function trocarEstadoPonto(idCena, nomePonto, estadoNovo) {
+    let jsonStorage = localStorage.getItem('cenas');
+    let cenaJson = JSON.parse(jsonStorage);
+
+    for (let ponto of cenaJson[idCena].pontosInteresse) {
+        if (ponto.nome == nomePonto) {
+            ponto.estado = estadoNovo;
+        }
+    }
+
+    localStorage.setItem('cenas', JSON.stringify(cenaJson));
+    montarCena(cenaJson[idCena].nome)
+    mostrarMenu('.examinar-items');
+
+    // TODO: Apagar item após uso
 }

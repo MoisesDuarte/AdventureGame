@@ -25,7 +25,7 @@
                  },
                  {
                     "idEstado": "1",
-                    "itemTrigger": "tomada",
+                    "itemTrigger": "Tomada",
                     "descricao": [
                        "Adivinhe só, a tomada estava partida. Agora está ligado."
                     ]
