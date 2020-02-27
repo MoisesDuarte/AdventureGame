@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@font-face {
+    font-family: "Roboto Slab";
+    src: url("./RobotoSlab.ttf")
+}
 
 /* Variaveis */
 :root {
@@ -8,7 +11,8 @@
 
 /* Fonte Global */
 body {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab';
+    font-size: 12pt;
     background-color: var(--main-bg-color);
 }
 
