@@ -1,5 +1,4 @@
 // (limparCena, mostrarItem, bloquearMenu - ui_functions.js)
-
 // FUNÇÕES PARA CONSTRUÇÃO DE CENA DE JOGO
 function montarCena(nomeCena) {
     // Limpa a cena
@@ -99,6 +98,6 @@ function guardarCenas() {
         let cenaObj = JSON.parse(stringJson);
 
         localStorage.setItem('cenas', stringJson);
-        console.log(cenaObj[0].nome)
+        location.reload();
     })
 }
