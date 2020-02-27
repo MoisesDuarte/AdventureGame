@@ -21,38 +21,48 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 
 ```json
 {
-   "nome":"",
-   "descricao":"",
-   "fundo":"",
-   "locais":[
-      {
-         "id" : "1",
-         "nome":"",
-         "destino":""
-      }
-   ],
-   "pontosInteresse":[
-      {
-         "id" : "1",
-         "nome":"",
-         "descricao": [
-            ""
-         ]
-      }
-   ],
-   "atores":[
-      {
-         "id" : "1",
-         "nome":"",
-         "estado":"",
-         "falas":{
-            "neutro":[
-               ""
-            ]
-         }
-      }
-   ]
-}
+        "nome":"",
+        "descricao":"",
+        "fundo":"",
+        "locais":[
+           {
+              "id" : "",
+              "nome":"",
+              "destino":""
+           }
+        ],
+        "pontosInteresse":[
+           {
+              "id" : "",
+              "nome":"",
+              "descricoes": [
+                 {
+                    "estado": "",
+                    "itemTrigger": "",
+                    "descricao": [
+                        ""
+                    ]
+                 }
+              ]
+           }
+        ],
+        "atores":[
+           {
+              "id" : "",
+              "nome":"",
+              "estado" : "",
+              "falas": [
+                 {
+                    "estado": "",
+                    "itemTrigger": "",
+                    "dialogo": [
+                       ""
+                    ]
+                 }
+              ]
+           }
+        ]
+     }
 ```
 
 - Para acessa-lá, adicione a cena como um local em uma cena anterior
@@ -61,7 +71,7 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 "locais":[
    {
       "id" : "1",
-      "nome":"Laboratório 1", // Nome Igual ao definido no objeto da cena de referência
+      "nome":"Bloco A"
    }
 ]
 ```
@@ -70,17 +80,28 @@ Por momento, a gui apenas gera cenas estáticas, sem interação lógica. O bloc
 
 ```json
 "atores":[
-      {
-         "id" : "1",
-         "nome":"Coord. Luiz",
-         "estado":"neutro",
-         "falas":{
-            "neutro":[
-               "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
-               "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
-               "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
+   {
+      "id" : "1",
+      "nome":"Prof. Ramon",
+      "estado" : "neutro",
+      "falas": [
+         {
+            "estado": "neutro",
+            "itemTrigger": "nenhum",
+            "dialogo": [
+               "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
+               "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
+            ]
+         },
+         {
+            "estado": "irritado",
+            "itemTrigger": "Fotos Enchente",
+            "dialogo": [
+               "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
+               "Ramon:<br>Falsidade é um crime ainda não reconhecido pela legislação."
             ]
          }
-      }
-   ]
+      ]
+   }
+]
 ```

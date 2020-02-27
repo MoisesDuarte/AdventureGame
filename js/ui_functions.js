@@ -32,7 +32,6 @@ function mostrarTexto(arrayFalas) {
         }
 
         while (i < atorFalas.length) {
-            console.log(i + ' : ' + atorFalas[i]);
             textConteudo.innerHTML = atorFalas[i];
             i++;
             break;
@@ -57,7 +56,6 @@ function mostrarItem(arrayItem) {
 function checarInteracao(objTriggers) {
     let cInteracoes = document.querySelector('.inventario-interacoes');
     let itemAtivo = cInteracoes.dataset.itemAtivo;
-    console.log(itemAtivo)
 
     for (let trigger of objTriggers) {
         if (trigger.itemTrigger == itemAtivo) {

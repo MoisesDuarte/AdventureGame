@@ -6,8 +6,7 @@
         "locais":[
            {
               "id" : "1",
-              "nome":"Bloco A",
-              "destino":"blocoA"
+              "nome":"Bloco A"
            }
         ],
         "pontosInteresse":[
@@ -66,8 +65,7 @@
         "locais":[
            {
               "id" : "1",
-              "nome":"Laboratório 1",
-              "destino":"laboratorio1"
+              "nome":"Laboratório 1"
            }
         ],
         "pontosInteresse":[

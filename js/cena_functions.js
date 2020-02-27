@@ -108,14 +108,14 @@ function limparCena() {
 
 
 function guardarEstadoInicial() {
-    fetch('../cenas/_cenas.json')
+    fetch('../cenas/cenas.json')
         .then(res => { return res.json() })
         .then(data => {
             let cenasJson = JSON.stringify(data);
             localStorage.setItem('cenas', cenasJson);      
         });
 
-    fetch('../cenas/_inventario.json')
+    fetch('../cenas/inventario.json')
         .then(res => { return res.json() })
         .then(data => {
             let inventarioJson = JSON.stringify(data);
