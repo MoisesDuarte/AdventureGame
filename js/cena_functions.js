@@ -24,20 +24,23 @@ function montarCena(nomeCena) {
     let cExaminar = document.querySelector('.examinar-items');
     let cFalar = document.querySelector('.falar-items');
     let cInventario = document.querySelector('.inventario-items');
+    let cInteracoes = document.querySelector('.inventario-interacoes');
 
     cTela.style.backgroundImage = background;
 
-    let elementosLimpos = document.querySelectorAll('ul:not(.menu-items)');   
+    let elementosLimpos = document.querySelectorAll('ul:not(.menu-items):not(.inventario-interacoes)');   
     for (let elemento of elementosLimpos) {
         let voltar = document.createElement('li');
         let hr = document.createElement('hr');
         voltar.id = 'voltar_' + elemento.className;
+        hr.id = 'hr_' + elemento.className;
         voltar.innerHTML = 'VOLTAR';
         voltar.addEventListener('click', () => { mostrarMenu('.menu-items') });
         elemento.appendChild(voltar);
         elemento.appendChild(hr);
     }
 
+    // Menus
     for (let local of arrayLocais) {
         let li = document.createElement('li');
         li.id = 'local_' + local.id;
@@ -68,6 +71,30 @@ function montarCena(nomeCena) {
         li.innerHTML = item.nome;
         li.addEventListener('click', () => { mostrarItem( item.nome + "<br>" + item.descricao ) });
         cInventario.appendChild(li);
+    }
+
+    // Interações
+    let intTitle = document.createElement('p');
+    intTitle.innerHTML = 'USAR EM:';
+    cInteracoes.insertBefore( intTitle,  cInteracoes.firstChild);
+
+    for (let pontoInteracao of arrayPontos) {
+        let li = document.createElement('li');
+        li.id = 'interacao_' + pontoInteracao.nome;
+        li.innerHTML = pontoInteracao.nome;
+        li.addEventListener('click', () => { console.log("Interação com " + pontoInteracao.nome) });
+        cInteracoes.appendChild(li);
+    }
+
+    let hr = document.createElement('hr');
+    cInteracoes.appendChild(hr);
+
+    for (let atorInteracao of arrayAtores) {
+        let li = document.createElement('li');
+        li.id = 'interacao_' + atorInteracao.nome;
+        li.innerHTML = atorInteracao.nome;
+        li.addEventListener('click', () => { console.log('Interação com ' + atorInteracao.nome) });
+        cInteracoes.appendChild(li);
     }
 };
 

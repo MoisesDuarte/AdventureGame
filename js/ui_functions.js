@@ -42,12 +42,15 @@ function mostrarTexto(arrayFalas) {
 
 function mostrarItem(item) {
     let cText = document.querySelector('.text-conteudo');
-    let elVoltar = document.querySelectorAll('.examinar-items > li');
-    console.log(elVoltar)
+    let cExaminar = document.querySelector('.examinar-items');
+    let elVoltar = document.querySelector('#hr_examinar-items');
+    let elTitle = document.createElement('p');
     
     cText.innerHTML = item;
+    elTitle.innerHTML = 'USAR EM:';
+    cExaminar.insertBefore(elTitle, elVoltar.nextSibling);
 
-    mostrarMenu('.examinar-items');
+    mostrarMenu('.inventario-interacoes');
 }
 
 
