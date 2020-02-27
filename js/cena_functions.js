@@ -82,9 +82,14 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + pontoInteracao.nome;
         li.innerHTML = pontoInteracao.nome;
-        li.dataset.trigger = pontoInteracao.descricoes[1].itemTrigger;
-        console.log(pontoInteracao.descricoes)
-        li.addEventListener('click', () => { console.log("Interação com " + pontoInteracao.nome) });
+
+        // Array de Triggers do Objeto
+        let triggers = [];
+        for (let trigger of pontoInteracao.descricoes) {
+            triggers.push(trigger.itemTrigger)
+        }
+
+        li.addEventListener('click', () => { checarTrigger(triggers) });
         cInteracoes.appendChild(li);
     }
 
@@ -95,8 +100,14 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + atorInteracao.nome;
         li.innerHTML = atorInteracao.nome;
-        li.dataset.trigger = atorInteracao.falas[1].itemTrigger;
-        li.addEventListener('click', () => { console.log('Interação com ' + atorInteracao.nome) });
+
+        // Array de Triggers do Ator
+        let triggers = [];
+        for (let trigger of atorInteracao.falas) {
+            triggers.push(trigger.itemTrigger)
+        }
+
+        li.addEventListener('click', () => { checarTrigger(triggers) });
         cInteracoes.appendChild(li);
     }
 

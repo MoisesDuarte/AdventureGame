@@ -51,6 +51,11 @@ function mostrarItem(item) {
     cExaminar.insertBefore(elTitle, elVoltar.nextSibling);
 
     mostrarMenu('.inventario-interacoes');
+};
+
+
+function checarTrigger(arrayTrigger) {
+    console.log(arrayTrigger)
 }
 
 
