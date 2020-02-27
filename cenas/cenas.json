@@ -16,7 +16,6 @@
               "estado": "0",
               "descricoes": [
                  {
-                    "id": "0",
                     "idEstado": "0",
                     "itemTrigger": "nenhum",
                     "descricao": [
@@ -25,7 +24,6 @@
                     ]
                  },
                  {
-                    "id" : "1",
                     "idEstado": "1",
                     "itemTrigger": "tomada",
                     "descricao": [
