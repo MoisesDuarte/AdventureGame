@@ -1,86 +1,89 @@
 [
-   {
-     "id": "1",
-     "nome": "Laboratório 1",
-     "descricao": "",
-     "fundo": "BackgroundLaboratorio1.jpg",
-     "locais": [
-       {
-         "id": "1",
-         "nome": "Bloco A"
-       }
-     ],
-     "pontosInteresse": [
-       {
-         "id": "1",
-         "nome": "Computador",
-         "descricao": [
-           "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
-           "Uma pena, realmente, mas fazer o quê."
-         ]
-       }
-     ],
-     "atores": [
-       {
-         "id": "1",
-         "nome": "Prof. Ramon",
-         "estado": "neutro",
-         "falas": {
-           "neutro": [
-             "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
-             "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
-           ],
-           "irritado": [
-             "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor."
-           ]
-         }
-       },
-       {
-         "id": "2",
-         "nome": "Prof. Luiz",
-         "estado": "neutro",
-         "falas": {
-           "neutro": [
-             "Luiz:<br>Não ligue para mim, estou apenas de assistente aqui."
-           ]
-         }
-       }
-     ]
-   },
-   {
-     "id": "2",
-     "nome": "Bloco A",
-     "descricao": "",
-     "fundo": "BackgroundBlocoA.jpg",
-     "locais": [
-       {
-         "id": "1",
-         "nome": "Laboratório 1"
-       }
-     ],
-     "pontosInteresse": [
-       {
-         "id": "1",
-         "nome": "Lâmp. de Chão",
-         "descricao": [
-           "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
-           "Não há nenhum interruptor vísivel, então não posso fazer nada."
-         ]
-       }
-     ],
-     "atores": [
-       {
-         "id": "1",
-         "nome": "Coord. Luiz",
-         "estado": "neutro",
-         "falas": {
-           "neutro": [
-             "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
-             "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
-             "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
-           ]
-         }
-       }
-     ]
-   }
- ]
+    {
+        "nome":"Laborat\u00f3rio 1",
+        "descricao":"",
+        "fundo":"BackgroundLaboratorio1.jpg",
+        "locais":[
+           {
+              "id" : "1",
+              "nome":"Bloco A",
+              "destino":"blocoA"
+           }
+        ],
+        "pontosInteresse":[
+           {
+              "id" : "1",
+              "nome":"Computador",
+              "descricao": [
+                 "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
+                 "Uma pena, realmente, mas fazer o quê."
+              ]
+           }
+        ],
+        "atores":[
+           {
+              "id" : "1",
+              "nome":"Prof. Ramon",
+              "estado" : "neutro",
+              "falas": [
+                 {
+                    "estado": "neutro",
+                    "itemTrigger": "nenhum",
+                    "dialogo": [
+                       "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
+                       "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
+                    ]
+                 },
+                 {
+                    "estado": "irritado",
+                    "itemTrigger": "Fotos Enchente",
+                    "dialogo": [
+                       "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
+                       "Ramon:<br>Falsidade é um crime ainda não reconhecido pela legislação."
+                    ]
+                 }
+              ]
+           }
+        ]
+     },
+     {
+        "nome":"Bloco A",
+        "descricao":"",
+        "fundo":"BackgroundBlocoA.jpg",
+        "locais":[
+           {
+              "id" : "1",
+              "nome":"Laboratório 1",
+              "destino":"laboratorio1"
+           }
+        ],
+        "pontosInteresse":[
+           {
+              "id" : "1",
+              "nome":"Lâmp. de Chão",
+              "descricao": [
+                 "Ainda está ligada, por algum motivo. A luz sequer desponta sobre a manhã.",
+                 "Não há nenhum interruptor vísivel, então não posso fazer nada."
+              ]
+           }
+        ],
+        "atores":[
+           {
+              "id" : "1",
+              "nome":"Coord. Luiz",
+              "estado":"neutro",
+              "falas": [
+                 {
+                    "estado": "neutro",
+                    "itemTrigger": "nenhum",
+                    "dialogo": [
+                       "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
+                       "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
+                       "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
+                    ]
+                 }
+              ]
+           }
+        ]
+     }  
+]

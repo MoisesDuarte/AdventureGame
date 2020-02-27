@@ -22,27 +22,26 @@
    "atores":[
       {
          "id" : "1",
-         "nome":"Prof. Ramon",
-         "estado" : "neutro",
-         "falas":{
-            "neutro":[
-               "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
-               "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
-            ],
-            "irritado": [
-               "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor."
-            ]
-         }
-      },
-      {
-         "id" : "2",
          "nome":"Prof. Luiz",
          "estado" : "neutro",
-         "falas":{
-            "neutro":[
-               "Luiz:<br>Não ligue para mim, estou apenas de assistente aqui."
-            ]
-         }
+         "falas": [
+            {
+               "estado": "neutro",
+               "itemTrigger": "nenhum",
+               "dialogo": [
+                  "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
+                  "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
+               ]
+            },
+            {
+               "estado": "irritado",
+               "itemTrigger": "Fotos Enchente",
+               "dialogo": [
+                  "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
+                  "Ramon:<br>Falsidade é um crime ainda não reconhecido pela legislação."
+               ]
+            }
+         ]
       }
    ]
 }
