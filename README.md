@@ -10,6 +10,7 @@ Uma GUI para jogos de aventura baseada em jogos de aventura clássicos (Uninvite
 
 ![Screenshot 00](img/screenshots/screen00.png)
 ![Screenshot 01](img/screenshots/screen01.png)
+![Screenshot 02](img/screenshots/screen02.png)
 
 ## Utilização
 
