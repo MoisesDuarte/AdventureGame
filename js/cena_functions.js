@@ -28,7 +28,7 @@ function montarCena(nomeCena) {
 
     cTela.style.backgroundImage = background;
 
-    let elementosLimpos = document.querySelectorAll('ul:not(.menu-items):not(.inventario-interacoes)');   
+    let elementosLimpos = document.querySelectorAll('ul:not(.menu-items)');   
     for (let elemento of elementosLimpos) {
         let voltar = document.createElement('li');
         let hr = document.createElement('hr');
@@ -69,14 +69,14 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'item_' + item.id;
         li.innerHTML = item.nome;
-        li.addEventListener('click', () => { mostrarItem( item.nome + "<br>" + item.descricao ) });
+        li.addEventListener('click', () => { mostrarItem( item ) });
         cInventario.appendChild(li);
     }
 
     // Interações
     let intTitle = document.createElement('p');
     intTitle.innerHTML = 'USAR EM:';
-    cInteracoes.insertBefore( intTitle,  cInteracoes.firstChild);
+    cInteracoes.appendChild(intTitle);
 
     for (let pontoInteracao of arrayPontos) {
         let li = document.createElement('li');
@@ -86,15 +86,14 @@ function montarCena(nomeCena) {
         // Array de Triggers do Objeto
         let triggers = [];
         for (let trigger of pontoInteracao.descricoes) {
-            triggers.push(trigger.itemTrigger)
+            triggers.push(trigger.itemTrigger);
         }
 
-        li.addEventListener('click', () => { checarTrigger(triggers) });
+        li.dataset.triggers = triggers;
+        li.addEventListener('click', () => {  });
         cInteracoes.appendChild(li);
+        console.log(li)
     }
-
-    let hr = document.createElement('hr');
-    cInteracoes.appendChild(hr);
 
     for (let atorInteracao of arrayAtores) {
         let li = document.createElement('li');
@@ -104,14 +103,14 @@ function montarCena(nomeCena) {
         // Array de Triggers do Ator
         let triggers = [];
         for (let trigger of atorInteracao.falas) {
-            triggers.push(trigger.itemTrigger)
+            triggers.push(trigger.itemTrigger);
         }
 
-        li.addEventListener('click', () => { checarTrigger(triggers) });
+        li.dataset.triggers = triggers;
+        li.addEventListener('click', () => { console.log('interacao') });
         cInteracoes.appendChild(li);
+        console.log(li)
     }
-
-    console.log(cInteracoes.childNodes)
 };
 
 

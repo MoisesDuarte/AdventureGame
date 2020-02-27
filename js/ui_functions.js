@@ -40,23 +40,20 @@ function mostrarTexto(arrayFalas) {
     });
 };
 
-function mostrarItem(item) {
+function mostrarItem(arrayItem) {
+    let cInteracoes = document.querySelector('.inventario-interacoes');
     let cText = document.querySelector('.text-conteudo');
-    let cExaminar = document.querySelector('.examinar-items');
-    let elVoltar = document.querySelector('#hr_examinar-items');
     let elTitle = document.createElement('p');
+
+    cInteracoes.dataset.itemAtivo = arrayItem.nome;
     
-    cText.innerHTML = item;
+    cText.innerHTML = arrayItem.descricao;
     elTitle.innerHTML = 'USAR EM:';
-    cExaminar.insertBefore(elTitle, elVoltar.nextSibling);
 
     mostrarMenu('.inventario-interacoes');
+     
+    console.log(cInteracoes);
 };
-
-
-function checarTrigger(arrayTrigger) {
-    console.log(arrayTrigger)
-}
 
 
 function bloquearMenu() {
