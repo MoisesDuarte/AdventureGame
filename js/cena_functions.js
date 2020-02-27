@@ -53,7 +53,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'ponto_' + ponto.id;
         li.innerHTML = ponto.nome;
-        li.addEventListener('click', () => { mostrarTexto(ponto.descricoes[0].descricao) });
+        li.addEventListener('click', () => { mostrarTexto(ponto.descricoes[ponto.estado].descricao) });
         cExaminar.appendChild(li);
     }
 
@@ -61,7 +61,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'ator_' + ator.id;
         li.innerHTML = ator.nome;
-        li.addEventListener('click', () => { mostrarTexto(ator.falas[0].dialogo) });
+        li.addEventListener('click', () => { mostrarTexto(ator.falas[ator.estado].dialogo) });
         cFalar.appendChild(li);
     }    
 
@@ -82,7 +82,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + pontoInteracao.nome;
         li.innerHTML = pontoInteracao.nome;
-        li.addEventListener('click', () => { checarInteracao(pontoInteracao.descricoes) });
+        li.addEventListener('click', () => { checarInteracao(idCena, pontoInteracao.nome, pontoInteracao.descricoes, 'ponto') });
         cInteracoes.appendChild(li);
     }
 
@@ -90,7 +90,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'interacao_' + atorInteracao.nome;
         li.innerHTML = atorInteracao.nome;
-        li.addEventListener('click', () => { checarInteracao(atorInteracao.falas) });
+        li.addEventListener('click', () => { checarInteracao(idCena, atorInteracao.nome, atorInteracao.falas, 'ator') });
         cInteracoes.appendChild(li);
     }
 };
@@ -125,13 +125,18 @@ function guardarEstadoInicial() {
 };
 
 
-function checarInteracao(objTriggers) {
+function checarInteracao(idCena, nome, objTriggers, tipo) {
     let cInteracoes = document.querySelector('.inventario-interacoes');
     let itemAtivo = cInteracoes.dataset.itemAtivo;
 
     for (let trigger of objTriggers) {
         if (trigger.itemTrigger == itemAtivo) {
             console.log("Interação Válida");
+            if (tipo == 'ator') {
+                trocarEstadoAtor(idCena, nome, trigger.idEstado);
+            } else if (tipo == 'ponto') {
+                console.log("Interação com ponto");
+            }
         }
     }
 };
@@ -141,11 +146,11 @@ function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     let jsonStorage = localStorage.getItem('cenas');
     let cenaJson = JSON.parse(jsonStorage);
 
-    for (let i = 0; i < cenaJson[idCena].atores.length; i++) {
-        if (cenaJson[idCena].atores[i].nome == nomeAtor) {
-            cenaJson[idCena].atores[i].estado = estadoNovo;
+    for (let ator of cenaJson[idCena].atores) {
+        if (ator.nome == nomeAtor) {
+            ator.estado = estadoNovo;
         }
-    }
+    }   
     
     localStorage.setItem('cenas', JSON.stringify(cenaJson));
 

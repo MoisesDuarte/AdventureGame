@@ -5,17 +5,19 @@
         "fundo":"BackgroundLaboratorio1.jpg",
         "locais":[
            {
-              "id" : "1",
+              "id" : "0",
               "nome":"Bloco A"
            }
         ],
         "pontosInteresse":[
            {
-              "id" : "1",
+              "id" : "0",
               "nome":"Computador",
+              "estado": "0",
               "descricoes": [
                  {
-                    "estado": "neutro",
+                    "id": "0",
+                    "idEstado": "0",
                     "itemTrigger": "nenhum",
                     "descricao": [
                         "Tela preta, travada. Não adianta reiniciar, eu sei que ele não vai voltar a ligar tão cedo.",
@@ -23,23 +25,24 @@
                     ]
                  },
                  {
-                  "estado": "ligado",
-                  "itemTrigger": "tomada",
-                  "descricao": [
-                      "Adivinhe só, a tomada estava partida. Agora está ligado."
-                  ]
+                    "id" : "1",
+                    "idEstado": "1",
+                    "itemTrigger": "tomada",
+                    "descricao": [
+                       "Adivinhe só, a tomada estava partida. Agora está ligado."
+                    ]
                  } 
               ]
            }
         ],
         "atores":[
            {
-              "id" : "1",
+              "id" : "0",
               "nome":"Prof. Ramon",
-              "estado" : "neutro",
+              "estado" : "0",
               "falas": [
                  {
-                    "estado": "neutro",
+                    "idEstado": "0",
                     "itemTrigger": "nenhum",
                     "dialogo": [
                        "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
@@ -47,7 +50,7 @@
                     ]
                  },
                  {
-                    "estado": "irritado",
+                    "idEstado": "1",
                     "itemTrigger": "Fotos Enchente",
                     "dialogo": [
                        "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
@@ -64,18 +67,18 @@
         "fundo":"BackgroundBlocoA.jpg",
         "locais":[
            {
-              "id" : "1",
+              "id" : "0",
               "nome":"Laboratório 1"
            }
         ],
         "pontosInteresse":[
             {
-              "id" : "1",
+              "id" : "0",
               "nome":"Lamp. de Chão",
-              "estado": "neutro",
+              "estado": "0",
               "descricoes": [
                  {
-                    "estado": "neutro",
+                    "idEstado": "0",
                     "itemTrigger": "nenhum",
                     "descricao": [
                         "Por algum motivo, está ligada.",
@@ -83,7 +86,7 @@
                     ]
                  },
                  {
-                     "estado": "apagada",
+                     "idEstado": "1",
                      "itemTrigger": "interruptor",
                      "descricao": [
                         "Está desligada."
@@ -94,12 +97,12 @@
         ],
         "atores":[
            {
-              "id" : "1",
+              "id" : "0",
               "nome":"Coord. Luiz",
-              "estado":"neutro",
+              "estado":"0",
               "falas": [
                  {
-                    "estado": "neutro",
+                    "idEstado": "0",
                     "itemTrigger": "nenhum",
                     "dialogo": [
                        "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
