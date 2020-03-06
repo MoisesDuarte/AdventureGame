@@ -46,21 +46,21 @@ function montarCena(idCena) {
     cInteracoes.appendChild(intTitle);
 
     let arrayInteracoes = [arrayPontos, arrayAtores];
-      for (let array of arrayInteracoes) {
+    arrayInteracoes.forEach((array) => {
         for (let interact of array) {
-            let li = document.createElement('li');
-            li.id = 'interacao_' + interact.nome;
-            li.innerHTML = interact.nome;            
-            li.addEventListener('click', function () { checarInteracao(idCena, interact.nome, interact.descricoes, interact.tipo) });
-            cInteracoes.appendChild(li);
-
             let liExaminar = document.createElement('li');
             liExaminar.id = 'examinar_' + interact.nome;
             liExaminar.innerHTML = interact.nome;
-            liExaminar.addEventListener('click', function () { mostrarTexto(interact.descricoes[interact.estado].descricao) });
+            liExaminar.addEventListener('click', () => { mostrarTexto(interact.descricoes[interact.estado].descricao) });
             cExaminar.appendChild(liExaminar);
+
+            let li = document.createElement('li');
+            li.id = 'interacao_' + interact.nome;
+            li.innerHTML = interact.nome;
+            li.addEventListener('click', () => { checarInteracao(idCena, interact.nome, interact.descricoes, interact.tipo) });
+            cInteracoes.appendChild(li);
         }
-    }
+    });  
 
     for (let item of arrayInventario) {
         let li = document.createElement('li');
@@ -68,7 +68,7 @@ function montarCena(idCena) {
         li.innerHTML = item.nome;
         li.addEventListener('click', () => { mostrarItem(item) });
         cInventario.appendChild(li);
-    }
+    };
 };
 
 
@@ -142,7 +142,7 @@ function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     
     // Salvando cenas atualizadas em localStorage e atualizando ui
     localStorage.setItem('cenas', JSON.stringify(cenaJson));
-    montarCena(cenaJson[idCena].nome)
+    montarCena(idCena)
     mostrarMenu('.examinar-items');
 
     // TODO: Apagar item do inventário após uso
@@ -159,7 +159,7 @@ function trocarEstadoPonto(idCena, nomePonto, estadoNovo) {
     }
 
     localStorage.setItem('cenas', JSON.stringify(cenaJson));
-    montarCena(cenaJson[idCena].nome)
+    montarCena(idCena)
     mostrarMenu('.examinar-items');
 
     // TODO: Apagar item após uso
