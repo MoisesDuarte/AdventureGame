@@ -6,7 +6,7 @@
         "fundo":"BackgroundLaboratorio1.jpg",
         "locais":[
            {
-              "id" : "0",
+              "idCena" : "1",
               "nome":"Bloco A"
            }
         ],
@@ -69,7 +69,7 @@
         "fundo":"BackgroundBlocoA.jpg",
         "locais":[
            {
-              "id" : "0",
+              "idCena" : "0",
               "nome":"Laboratório 1"
            }
         ],

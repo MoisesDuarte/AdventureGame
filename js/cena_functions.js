@@ -1,20 +1,8 @@
-// FUNÇÕES PARA MANUTENÇÃO DE CENA
-function montarCena(nomeCena) {
+function montarCena(idCena) {
     limparCena();
 
-    // Lendo arquivos JSON e guardando em objetos em localStorage
-    let jsonCena = localStorage.getItem('cenas');
-    let jsonInv = localStorage.getItem('inventario');
-    let cenaJson = JSON.parse(jsonCena);
-    let invJson = JSON.parse(jsonInv);
-
-    // Procurando pelo id da cena com base em nome (passar diretamente o id seria melhor)
-    let idCena;
-    for (let i = 0; i < cenaJson.length; i++) {
-        if (cenaJson[i].nome == nomeCena) {
-            idCena = i;
-        }
-    }
+    let cenaJson = JSON.parse(localStorage.getItem('cenas'));
+    let invJson = JSON.parse(localStorage.getItem('inventario'));
 
     // Guardando objetos da cena em arrays
     let background = 'url("img/' + cenaJson[idCena].fundo + '")';
@@ -27,9 +15,8 @@ function montarCena(nomeCena) {
     let cTela = document.querySelector('.tela-container');
     let cMovimento = document.querySelector('.movimento-items');
     let cExaminar = document.querySelector('.examinar-items');
-    let cFalar = document.querySelector('.falar-items');
-    let cInventario = document.querySelector('.inventario-items');
     let cInteracoes = document.querySelector('.inventario-interacoes');
+    let cInventario = document.querySelector('.inventario-items');
 
     // Definindo imagem de fundo da cena
     cTela.style.backgroundImage = background;
@@ -38,13 +25,10 @@ function montarCena(nomeCena) {
     let elementosLimpos = document.querySelectorAll('ul:not(.menu-items)');   
     for (let elemento of elementosLimpos) {
         let voltar = document.createElement('li');
-        let hr = document.createElement('hr');
         voltar.id = 'voltar_' + elemento.className;
-        hr.id = 'hr_' + elemento.className;
         voltar.innerHTML = 'VOLTAR';
         voltar.addEventListener('click', () => { mostrarMenu('.menu-items') });
         elemento.appendChild(voltar);
-        elemento.appendChild(hr);
     }
 
     // Adicionando opções a cada menu
@@ -52,7 +36,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'local_' + local.id;
         li.innerHTML = local.nome;
-        li.addEventListener('click', () => { montarCena(local.nome) });
+        li.addEventListener('click', () => { montarCena(local.idCena) });
         cMovimento.appendChild(li);
     }
 
