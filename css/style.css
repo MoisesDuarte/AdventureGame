@@ -13,7 +13,7 @@
 /* Fonte Global */
 body {
     font-family: 'Roboto Slab';
-    font-size: 12pt;
+    font-size: 100%;
     background-color: var(--main-bg-color);
 }
 
@@ -55,6 +55,10 @@ ul {
 
 ul:not(.menu-items) {
     text-transform: capitalize;
+}
+
+li {
+    font-size: 90%;
 }
 
 li:hover {
