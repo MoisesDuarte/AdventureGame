@@ -68,7 +68,7 @@ function montarCena(nomeCena) {
         let li = document.createElement('li');
         li.id = 'ator_' + ator.id;
         li.innerHTML = ator.nome;
-        li.addEventListener('click', () => { mostrarTexto(ator.falas[ator.estado].dialogo) });
+        li.addEventListener('click', () => { mostrarTexto(ator.descricoes[ator.estado].dialogo) });
         cFalar.appendChild(li);
     }    
 
@@ -85,21 +85,19 @@ function montarCena(nomeCena) {
     intTitle.innerHTML = 'USAR EM:';
     cInteracoes.appendChild(intTitle);
 
-    for (let pontoInteracao of arrayPontos) {
-        let li = document.createElement('li');
-        li.id = 'interacao_' + pontoInteracao.nome;
-        li.innerHTML = pontoInteracao.nome;
-        li.addEventListener('click', () => { checarInteracao(idCena, pontoInteracao.nome, pontoInteracao.descricoes, 'ponto') });
-        cInteracoes.appendChild(li);
-    }
-
-    for (let atorInteracao of arrayAtores) {
-        let li = document.createElement('li');
-        li.id = 'interacao_' + atorInteracao.nome;
-        li.innerHTML = atorInteracao.nome;
-        li.addEventListener('click', () => { checarInteracao(idCena, atorInteracao.nome, atorInteracao.falas, 'ator') });
-        cInteracoes.appendChild(li);
-    }
+    let arrayInteracoes = [arrayPontos, arrayAtores];
+    console.log(arrayInteracoes);
+    
+    arrayInteracoes.forEach((array) => {
+        for (interact of array) {
+            let li = document.createElement('li');
+            li.id = 'interacao_' + interact.nome;
+            li.innerHTML = interact.nome;            
+            li.addEventListener('click', () => { checarInteracao(idCena, interact.nome, interact.descricoes, interact.tipo) });
+            cInteracoes.appendChild(li);
+            console.log(interact);
+        }
+    })
 };
 
 

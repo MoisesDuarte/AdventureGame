@@ -14,6 +14,7 @@
               "id" : "0",
               "nome":"Computador",
               "estado": "0",
+              "tipo": "ponto",
               "descricoes": [
                  {
                     "idEstado": "0",
@@ -38,7 +39,8 @@
               "id" : "0",
               "nome":"Prof. Ramon",
               "estado" : "0",
-              "falas": [
+              "tipo": "ator",
+              "descricoes": [
                  {
                     "idEstado": "0",
                     "itemTrigger": "nenhum",
@@ -74,6 +76,7 @@
               "id" : "0",
               "nome":"Lamp. de Chão",
               "estado": "0",
+              "tipo": "ponto",
               "descricoes": [
                  {
                     "idEstado": "0",
@@ -98,7 +101,8 @@
               "id" : "0",
               "nome":"Coord. Luiz",
               "estado":"0",
-              "falas": [
+              "tipo": "ator",
+              "descricoes": [
                  {
                     "idEstado": "0",
                     "itemTrigger": "nenhum",
