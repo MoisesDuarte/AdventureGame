@@ -56,48 +56,35 @@ function montarCena(nomeCena) {
         cMovimento.appendChild(li);
     }
 
-    for (let ponto of arrayPontos) {
-        let li = document.createElement('li');
-        li.id = 'ponto_' + ponto.id;
-        li.innerHTML = ponto.nome;
-        li.addEventListener('click', () => { mostrarTexto(ponto.descricoes[ponto.estado].descricao) });
-        cExaminar.appendChild(li);
-    }
-
-    for (let ator of arrayAtores) {
-        let li = document.createElement('li');
-        li.id = 'ator_' + ator.id;
-        li.innerHTML = ator.nome;
-        li.addEventListener('click', () => { mostrarTexto(ator.descricoes[ator.estado].dialogo) });
-        cFalar.appendChild(li);
-    }    
-
-    for (let item of arrayInventario) {
-        let li = document.createElement('li');
-        li.id = 'item_' + item.id;
-        li.innerHTML = item.nome;
-        li.addEventListener('click', () => { mostrarItem( item ) });
-        cInventario.appendChild(li);
-    }
-
     // Adicionando opções ao menu de interações
     let intTitle = document.createElement('p');
     intTitle.innerHTML = 'USAR EM:';
     cInteracoes.appendChild(intTitle);
 
     let arrayInteracoes = [arrayPontos, arrayAtores];
-    console.log(arrayInteracoes);
-    
-    arrayInteracoes.forEach((array) => {
-        for (interact of array) {
+      for (let array of arrayInteracoes) {
+        for (let interact of array) {
             let li = document.createElement('li');
             li.id = 'interacao_' + interact.nome;
             li.innerHTML = interact.nome;            
-            li.addEventListener('click', () => { checarInteracao(idCena, interact.nome, interact.descricoes, interact.tipo) });
+            li.addEventListener('click', function () { checarInteracao(idCena, interact.nome, interact.descricoes, interact.tipo) });
             cInteracoes.appendChild(li);
-            console.log(interact);
+
+            let liExaminar = document.createElement('li');
+            liExaminar.id = 'examinar_' + interact.nome;
+            liExaminar.innerHTML = interact.nome;
+            liExaminar.addEventListener('click', function () { mostrarTexto(interact.descricoes[interact.estado].descricao) });
+            cExaminar.appendChild(liExaminar);
         }
-    })
+    }
+
+    for (let item of arrayInventario) {
+        let li = document.createElement('li');
+        li.id = 'item_' + item.id;
+        li.innerHTML = item.nome;
+        li.addEventListener('click', () => { mostrarItem(item) });
+        cInventario.appendChild(li);
+    }
 };
 
 
@@ -172,7 +159,7 @@ function trocarEstadoAtor(idCena, nomeAtor, estadoNovo) {
     // Salvando cenas atualizadas em localStorage e atualizando ui
     localStorage.setItem('cenas', JSON.stringify(cenaJson));
     montarCena(cenaJson[idCena].nome)
-    mostrarMenu('.falar-items');
+    mostrarMenu('.examinar-items');
 
     // TODO: Apagar item do inventário após uso
 }

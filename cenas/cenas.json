@@ -1,5 +1,6 @@
 [
     {
+        "id": "0",
         "nome":"Laborat\u00f3rio 1",
         "descricao":"",
         "fundo":"BackgroundLaboratorio1.jpg",
@@ -44,7 +45,7 @@
                  {
                     "idEstado": "0",
                     "itemTrigger": "nenhum",
-                    "dialogo": [
+                    "descricao": [
                        "Ramon:<br>Olá, senhor, como anda a vida? Júquia está paradisíaca, como sempre.",
                        "Ramon:<br>Sem dúvidas, uma cidade do futuro! Oh, grã província de águas turvas!"
                     ]
@@ -52,7 +53,7 @@
                  {
                     "idEstado": "1",
                     "itemTrigger": "Fotos Enchente",
-                    "dialogo": [
+                    "descricao": [
                        "Ramon:<br>Senhor, me desculpe, mas eu realmente não compreendo seu senso de humor.",
                        "Ramon:<br>Falsidade é um crime ainda não reconhecido pela legislação."
                     ]
@@ -62,6 +63,7 @@
         ]
      },
      {
+        "id": "1",
         "nome":"Bloco A",
         "descricao":"",
         "fundo":"BackgroundBlocoA.jpg",
@@ -106,7 +108,7 @@
                  {
                     "idEstado": "0",
                     "itemTrigger": "nenhum",
-                    "dialogo": [
+                    "descricao": [
                        "Luiz:<br>Eu estou saindo em breve, você sabe. É uma pena, mas acontece.",
                        "Luiz:<br>Espero que esse lugar não acabe uma várzea enquanto eu estiver fora.",
                        "Luiz:<br>Mas é provável que tudo fique bem, no fim das contas."
