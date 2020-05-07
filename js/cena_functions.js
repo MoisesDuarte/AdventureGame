@@ -24,20 +24,20 @@ function montarCena(idCena) {
     // Adicionando a opção voltar e um divisor no topo de cada lista
     let elementosLimpos = document.querySelectorAll('ul:not(.menu-items)');   
     for (let elemento of elementosLimpos) {
-        let voltar = document.createElement('li');
-        voltar.id = 'voltar_' + elemento.className;
-        voltar.innerHTML = 'VOLTAR';
-        voltar.addEventListener('click', () => { mostrarMenu('.menu-items') });
-        elemento.appendChild(voltar);
+        html = `<li class="voltar_${elemento.className}" onclick="mostrarMenu('.menu-items')">
+                    VOLTAR
+                </li>`;
+
+        elemento.insertAdjacentHTML('beforeend', html);
     }
 
     // Adicionando opções a cada menu
     for (let local of arrayLocais) {
-        let li = document.createElement('li');
-        li.id = 'local_' + local.id;
-        li.innerHTML = local.nome;
-        li.addEventListener('click', () => { montarCena(local.idCena) });
-        cMovimento.appendChild(li);
+        html = `<li id="local_${local.id}" onclick="montarCena(${local.idCena})">
+                    ${local.nome}
+                </li>`;
+
+        cMovimento.insertAdjacentHTML('beforeend', html);
     }
 
     // Adicionando opções ao menu de interações
@@ -61,6 +61,7 @@ function montarCena(idCena) {
             cInteracoes.appendChild(li);
         }
     });  
+    
 
     for (let item of arrayInventario) {
         let li = document.createElement('li');
